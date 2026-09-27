@@ -1,0 +1,61 @@
+   1|---
+   2|title: Menu 组件参考
+   3|description: A SwiftUI Menu component for displaying dropdown menus.
+   4|---
+   6|# Menu 组件参考
+   8|> 支持平台：iOS、tvOS、Expo Go。
+  10|Expo UI Menu matches the official SwiftUI [Menu API](https://developer.apple.com/documentation/swiftui/menu) and supports styling via the [`buttonStyle`](modifiers#buttonstylestyle) modifier. Menu opens on a single tap. For long-press interactions, use [`ContextMenu`](contextmenu) instead.
+  12|![Open menu showing Settings, Profile, and a destructive Delete item](/static/images/expo-ui/menu/ios-light.webp)
+  14|> **Note:** On tvOS, Menu requires tvOS 17.0 or later.
+  16|## Installation
+  18|:::tabs
+  19|:::tab npm
+  23|:::
+  24|:::tab yarn
+  28|:::
+  29|:::tab pnpm
+  33|:::
+  34|:::tab bun
+  38|:::
+  39|:::
+  41|## Usage
+  43|### Simple text label
+  45|![An open menu listing Option 1, Option 2, and Option 3](/static/images/expo-ui/examples/menu-simple-ios-light.webp)
+  72|### Text label with SF Symbol
+  74|![An open menu with Settings and Profile rows, a divider, and a red Delete row](/static/images/expo-ui/examples/menu-with-icon-ios-light.webp)
+ 106|### Custom label
+ 108|You can pass a React node as the label for custom styling.
+ 110|![A menu trigger labeled Custom Label in the accent color](/static/images/expo-ui/examples/menu-custom-label-ios-light.webp)
+ 139|### React Native components as label
+ 141|You can use a React Native view (such as `Pressable`) as the menu's label by wrapping it in [`RNHostView`](rnhostview).
+ 143|![A purple React Native Pressable used as the menu trigger](/static/images/expo-ui/examples/menu-rn-label-ios-light.webp)
+ 184|### Nested menu
+ 186|Menus can be nested to create submenus.
+ 188|![An open menu with Item 1, a Submenu row with a chevron, and Item 2](/static/images/expo-ui/examples/menu-nested-ios-light.webp)
+ 221|### With primary action
+ 223|When `onPrimaryAction` is provided, a single tap triggers the primary action while a long-press shows the menu.
+ 225|![A menu trigger labeled Tap or hold with a play icon](/static/images/expo-ui/examples/menu-primary-action-ios-light.webp)
+ 257|### Styling with modifiers
+ 259|You can use the `buttonStyle` modifier to change the appearance of the menu trigger.
+ 261|![A menu trigger rendered as a filled blue button](/static/images/expo-ui/examples/menu-styled-ios-light.webp)
+ 287|### Plain trigger on Mac Catalyst
+ 289|On a Mac Catalyst build that uses the Mac idiom (Xcode's **Optimize Interface for Mac**), SwiftUI renders `Menu` as an AppKit pull-down button: bordered chrome and a disclosure chevron replace a custom `label`, and the pull-down's own sizing widens the trigger. Combine `menuStyle('button')`, `buttonStyle('plain')` and `menuIndicator('hidden')` to keep the label as the entire trigger.
+ 323|### Glass menu
+ 325|To create a menu with the iOS Liquid Glass appearance, use `buttonStyle('glass')` or `buttonStyle('glassProminent')` on the Menu component.
+ 327|> **Important:** Do not apply the `glassEffect()` modifier to the Menu's label view to achieve a glass look. This causes a visual artifact where a rectangular halo briefly appears behind the trigger when the menu is dismissed. Always use `buttonStyle` instead, which correctly integrates with the Menu's dismiss animation.
+ 329|![A menu trigger rendered as a glass capsule with an ellipsis icon](/static/images/expo-ui/examples/menu-glass-ios-light.webp)
+ 356|For a more prominent glass effect, use `glassProminent`:
+ 358|![A menu trigger rendered as a prominent blue glass capsule with a sliders icon](/static/images/expo-ui/examples/menu-glass-prominent-ios-light.webp)
+ 387|### With control group
+ 389|Use a [`ControlGroup`](controlgroup) inside a menu to render a horizontal row of icon buttons, similar to the quick actions row in Apple Music or Safari menus.
+ 391|![An open menu with an Add, Favorite, and Share row above two sections of list items](/static/images/expo-ui/examples/menu-control-group-ios-light.webp)
+ 448|### Disabled items
+ 450|Use the [`disabled(true)`](modifiers#disableddisabled) modifier on a menu `Button` to render it greyed-out and non-interactive. The button still appears in the menu but won't fire `onPress`.
+ 452|![An open menu with an Available row and a greyed-out Locked row](/static/images/expo-ui/examples/menu-disabled-item-ios-light.webp)
+ 478|### Selectable items (checkmarks)
+ 480|A SwiftUI [`Toggle`](toggle) placed inside a `Menu` automatically renders as a row with its SF Symbol (when `systemImage` is set) and a checkmark before that symbol when `isOn` is `true`. Use this pattern instead of inventing a custom checkmark item.
+ 482|![An open menu where Show completed has a checkmark and Show archived does not](/static/images/expo-ui/examples/menu-checkmarks-ios-light.webp)
+ 519|### Icon only menu button
+ 521|Use the `labelStyle('iconOnly')` modifier to display only the icon without the label text. The `label` prop should still be provided for accessibility purposes.
+ 523|![A menu trigger showing only a circled ellipsis icon](/static/images/expo-ui/examples/menu-icon-only-ios-light.webp)
+ 554|## API

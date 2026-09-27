@@ -1,0 +1,224 @@
+---
+title: Namespace 组件参考
+description: 用于在 SwiftUI 中创建 Namespace 的组件。
+---
+
+# Namespace 组件参考
+
+> 支持平台：iOS、tvOS、Expo Go。
+
+Namespace 组件用于创建 SwiftUI [Namespace](https://developer.apple.com/documentation/swiftui/namespace)，以便在视图之间协调动画和匹配几何效果。
+
+## 安装
+
+:::tabs
+:::tab npm
+```sh
+npx expo install @expo/ui
+```
+:::
+:::tab yarn
+```sh
+yarn expo install @expo/ui
+```
+:::
+:::tab pnpm
+```sh
+pnpm expo install @expo/ui
+```
+:::
+:::tab bun
+```sh
+bun expo install @expo/ui
+```
+:::
+:::
+
+## 用法
+
+Namespace 用于在视图之间协调动画和匹配几何效果。它们提供可在组件间共享的唯一标识符，以创建平滑过渡。
+
+```tsx
+import {
+  Host,
+  HStack,
+  GlassEffectContainer,
+  Image,
+  Namespace,
+  VStack,
+  Button,
+  Text,
+} from '@expo/ui/swift-ui';
+import {
+  padding,
+  glassEffect,
+  animation,
+  Animation,
+  glassEffectId,
+  background,
+  cornerRadius,
+  frame,
+  foregroundStyle,
+} from '@expo/ui/swift-ui/modifiers';
+import { useId, useState } from 'react';
+
+function MatchedGeometryExample() {
+  const [isGlassExpanded, setIsGlassExpanded] = useState(false);
+  const namespaceId = useId();
+
+  return (
+    <Host
+      style={{
+        flex: 1,
+        backgroundColor: 'purple',
+      }}>
+      <VStack
+        spacing={60}
+        modifiers={[
+          animation(
+            Animation.spring({ duration: 0.8 }),
+            isGlassExpanded
+          ),
+        ]}>
+        <Namespace id={namespaceId}>
+          <GlassEffectContainer
+            spacing={30}
+            modifiers={[
+              animation(
+                Animation.spring({ duration: 0.8 }),
+                isGlassExpanded
+              ),
+              padding({ all: 30 }),
+              cornerRadius(20),
+            ]}>
+            <VStack spacing={25}>
+              <HStack spacing={25}>
+                <Image
+                  systemName="paintbrush.fill"
+                  size={42}
+                  modifiers={[
+                    frame({ width: 50, height: 50 }),
+                    padding({ all: 15 }),
+                    glassEffect({
+                      glass: {
+                        variant: 'clear',
+                      },
+                    }),
+                    glassEffectId('paintbrush', namespaceId),
+                    cornerRadius(15),
+                  ]}
+                />
+                <Image
+                  systemName="scribble.variable"
+                  size={42}
+                  modifiers={[
+                    frame({ width: 50, height: 50 }),
+                    padding({ all: 15 }),
+                    glassEffect({
+                      glass: {
+                        variant: 'clear',
+                      },
+                    }),
+                    glassEffectId('scribble', namespaceId),
+                    cornerRadius(15),
+                  ]}
+                />
+                <Image
+                  systemName="pencil.tip.crop.circle"
+                  size={42}
+                  modifiers={[
+                    frame({ width: 50, height: 50 }),
+                    padding({ all: 15 }),
+                    glassEffect({
+                      glass: {
+                        variant: 'clear',
+                      },
+                    }),
+                    glassEffectId('pencil', namespaceId),
+                    cornerRadius(15),
+                  ]}
+                />
+              </HStack>
+
+              {isGlassExpanded && (
+                <HStack spacing={25}>
+                  <Image
+                    systemName="eraser.fill"
+                    size={42}
+                    modifiers={[
+                      frame({ width: 50, height: 50 }),
+                      padding({ all: 15 }),
+                      glassEffect({
+                        glass: {
+                          variant: 'clear',
+                        },
+                      }),
+                      glassEffectId('eraser', namespaceId),
+                      cornerRadius(15),
+                    ]}
+                  />
+                  <Image
+                    systemName="highlighter"
+                    size={42}
+                    modifiers={[
+                      frame({ width: 50, height: 50 }),
+                      padding({ all: 15 }),
+                      glassEffect({
+                        glass: {
+                          variant: 'clear',
+                        },
+                      }),
+                      glassEffectId('highlighter', namespaceId),
+                      cornerRadius(15),
+                    ]}
+                  />
+                  <Image
+                    systemName="heart.fill"
+                    size={42}
+                    modifiers={[
+                      frame({ width: 50, height: 50 }),
+                      padding({ all: 15 }),
+                      glassEffect({
+                        glass: {
+                          variant: 'clear',
+                        },
+                      }),
+                      glassEffectId('heart.fill', namespaceId),
+                      cornerRadius(15),
+                    ]}
+                  />
+                </HStack>
+              )}
+            </VStack>
+          </GlassEffectContainer>
+        </Namespace>
+
+        <VStack spacing={15}>
+          <Button
+            onPress={() => setIsGlassExpanded(!isGlassExpanded)}
+            modifiers={[
+              padding({ horizontal: 30, vertical: 15 }),
+              background('#000'),
+              cornerRadius(25),
+              glassEffect({
+                glass: {
+                  variant: 'clear',
+                },
+              }),
+            ]}>
+            <Text modifiers={[foregroundStyle('#fff')]}>
+              {isGlassExpanded ? 'Hide tools' : 'Show more tools'}
+            </Text>
+          </Button>
+        </VStack>
+      </VStack>
+    </Host>
+  );
+}
+```
+
+## API
+
+```tsx
+import { Namespace } from '@expo/ui/swift-ui';
+```

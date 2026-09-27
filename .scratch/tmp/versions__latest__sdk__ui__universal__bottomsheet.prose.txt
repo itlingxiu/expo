@@ -1,0 +1,56 @@
+   1|---
+   2|title: BottomSheet 组件参考
+   3|description: A modal sheet that slides up from the bottom of the screen.
+   4|---
+   6|# BottomSheet 组件参考
+   8|> 支持平台：Android、iOS、Web、Expo Go。
+  10|A modal sheet that slides up from the bottom of the screen. The sheet's visibility is controlled — toggle [`isPresented`](#ispresented) from React state and dismiss it from [`onDismiss`](#ondismiss) (called when the user swipes down or taps the overlay).
+  12|> **info** On iOS, to show a bottom sheet on top of another, nest the second `BottomSheet` inside the first sheet's content rather than beside it. This is a limitation of the underlying SwiftUI [`sheet`](<https://developer.apple.com/documentation/swiftui/view/sheet(ispresented:ondismiss:content:)>) modifier. See [how to present multiple sheets](https://www.hackingwithswift.com/quick-start/swiftui/how-to-present-multiple-sheets) for more information.
+  14|**Android**
+  16|![Modal bottom sheet with title, description, and action buttons](/static/images/expo-ui/bottomsheet/android-light.webp)
+  18|**iOS**
+  20|![A BottomSheet at medium detent showing a Sort By list with Most Recent selected](/static/images/expo-ui/bottomsheet/ios-light.webp)
+  22|## Installation
+  24|:::tabs
+  25|:::tab npm
+  29|:::
+  30|:::tab yarn
+  34|:::
+  35|:::tab pnpm
+  39|:::
+  40|:::tab bun
+  44|:::
+  45|:::
+  47|## Usage
+  49|### Basic bottom sheet
+  51|**Android**
+  53|![An open sheet titled Sheet contents with a Close button, over a dimmed screen](/static/images/expo-ui/examples/universal-bottomsheet-basic-android-light.webp)
+  55|**iOS**
+  57|![An open sheet titled Sheet contents with a Close button, over a dimmed screen](/static/images/expo-ui/examples/universal-bottomsheet-basic-ios-light.webp)
+  86|### Hiding the drag indicator
+  88|Pass [`showDragIndicator={false}`](#showdragindicator) for sheets without a handle.
+  90|**Android**
+  92|![A short sheet with no drag handle at the bottom of a dimmed screen](/static/images/expo-ui/examples/universal-bottomsheet-no-indicator-android-light.webp)
+  94|**iOS**
+  96|![A short sheet with no drag handle at the bottom of a dimmed screen](/static/images/expo-ui/examples/universal-bottomsheet-no-indicator-ios-light.webp)
+ 124|### Content padding
+ 126|The sheet insets its content by default. Pass [`contentPadding`](#contentpadding) to change that inset — `0` lets a row, image, or divider reach the sheet's edges.
+ 128|**Android**
+ 130|![A bottom sheet whose blue banner reaches the sheet edge with no content padding](/static/images/expo-ui/examples/universal-bottomsheet-content-padding-android-light.webp)
+ 132|**iOS**
+ 134|![A bottom sheet whose blue banner reaches the sheet edge with no content padding](/static/images/expo-ui/examples/universal-bottomsheet-content-padding-ios-light.webp)
+ 164|### Snap points
+ 166|Pass [`snapPoints`](#snappoints) to let the user drag the sheet between multiple resting heights. You can use the semantic values `'half'` and `'full'` for cross-platform parity. The `{ fraction }` and `{ height }` forms are honored precisely on iOS and web.
+ 168|When sheet content can be taller than the smallest snap point, wrap it in a `ScrollView` so the overflow scrolls correctly.
+ 170|**Android**
+ 172|![A half-height sheet titled Half / full sheet](/static/images/expo-ui/examples/universal-bottomsheet-snap-points-android-light.webp)
+ 174|**iOS**
+ 176|![A half-height sheet titled Half / full sheet](/static/images/expo-ui/examples/universal-bottomsheet-snap-points-ios-light.webp)
+ 209|> On Android, `{ fraction }` and `{ height }` snap to the nearest of `'half'` / `'full'` — the underlying `ModalBottomSheet` only supports two resting states. The partial state is only visible when content is tall enough to exceed Material's partial threshold; give the content an explicit height or fill the available space if you need the half state on short content.
+ 211|### Scrollable React Native content
+ 213|The bottom sheet supports a React Native list such as `FlatList` (or a high-performance list like [FlashList](https://shopify.github.io/flash-list) or [Legend List](https://github.com/LegendApp/legend-list)) as a child when wrapped in [`RNHostView`](rnhostview). [`snapPoints`](#snappoints) sizes the sheet, and the list scrolls within that height. With `nestedScrollEnabled`, the list scrolls its own content first; once it reaches the top edge, the remaining drag moves the sheet.
+ 215|**Android**
+ 217|![A half-height sheet holding a scrollable list of items](/static/images/expo-ui/examples/universal-bottomsheet-scrollable-android-light.webp)
+ 219|**iOS**
+ 221|![A half-height sheet holding a scrollable list of items](/static/images/expo-ui/examples/universal-bottomsheet-scrollable-ios-light.webp)
+ 259|## API

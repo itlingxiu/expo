@@ -1,0 +1,249 @@
+---
+title: MediaLibrary 包参考
+description: 用于访问设备媒体库的库。
+---
+
+# MediaLibrary 包参考
+
+> 支持平台：Android、iOS、tvOS、Expo Go。
+
+`expo-media-library` 提供对用户媒体库的访问，让应用可以读取已有的图片和视频，也可以保存新的媒体。
+
+:::warning
+在 Android 上，只有需要广泛访问照片的应用才允许完整访问媒体库（本包的主要用途）。见 [Google Play 照片和视频权限政策详情](https://support.google.com/googleplay/android-developer/answer/14115180)。
+:::
+
+## 安装
+
+:::tabs
+:::tab npm
+```sh
+npx expo install expo-media-library
+```
+:::
+:::tab yarn
+```sh
+yarn expo install expo-media-library
+```
+:::
+:::tab pnpm
+```sh
+pnpm expo install expo-media-library
+```
+:::
+:::tab bun
+```sh
+bun expo install expo-media-library
+```
+:::
+:::
+
+## 用法
+
+<details><summary>从网络添加新资源</summary>
+
+```tsx
+import { View, Text } from 'react-native';
+import { Image } from 'expo-image';
+import { useEffect, useState } from 'react';
+import { File, Paths } from 'expo-file-system';
+import { Asset, requestPermissionsAsync } from 'expo-media-library';
+
+export default function SaveToMediaLibraryExample() {
+  const [asset, setAsset] = useState<Asset | null>(null);
+
+  const downloadFile = async () => {
+    const url = 'https://picsum.photos/200/300';
+    const destinationFile = new File(Paths.cache, 'test_image.jpg');
+    if (destinationFile.exists) {
+      return destinationFile;
+    } else {
+      return File.downloadFileAsync(url, destinationFile);
+    }
+  };
+
+  useEffect(() => {
+    const downloadAndSaveAsset = async () => {
+      const file = await downloadFile();
+      const { status } = await requestPermissionsAsync();
+      if (status !== 'granted') {
+        return;
+      }
+      const asset = await Asset.create(file.uri);
+      setAsset(asset);
+    };
+
+    downloadAndSaveAsset();
+  }, []);
+
+  return (
+    <View>
+      {asset ? (
+        <>
+          <Text>{asset.id}</Text>
+          <Image source={{ uri: asset.id }} style={{ width: 200, height: 300 }} />
+        </>
+      ) : (
+        <Text>Downloading and creating asset...</Text>
+      )}
+    </View>
+  );
+}
+```
+
+</details>
+
+<details><summary>获取资源属性</summary>
+
+```tsx
+import { View, Text } from 'react-native';
+import { useEffect, useState } from 'react';
+import { AssetField, MediaType, Query, requestPermissionsAsync } from 'expo-media-library';
+
+export default function RetrievingAssetPropertiesExample() {
+  const [assetInfo, setAssetInfo] = useState<{
+    id: string;
+    filename: string;
+    mediaType: string;
+    width: number;
+    height: number;
+    creationTime: number | null;
+    modificationTime: number | null;
+  } | null>(null);
+
+  useEffect(() => {
+    const querySomeAsset = async () => {
+      const { status } = await requestPermissionsAsync();
+      if (status !== 'granted') {
+        return;
+      }
+
+      const [asset] = await new Query().limit(1).eq(AssetField.MEDIA_TYPE, MediaType.IMAGE).exe();
+
+      if (asset) {
+        const filename = await asset.getFilename();
+        const mediaType = (await asset.getMediaType()).toString();
+        const width = await asset.getWidth();
+        const height = await asset.getHeight();
+        const creationTime = await asset.getCreationTime();
+        const modificationTime = await asset.getModificationTime();
+        setAssetInfo({
+          id: asset.id,
+          filename,
+          mediaType,
+          width,
+          height,
+          creationTime,
+          modificationTime,
+        });
+      } else {
+        console.log('No assets found in the media library.');
+      }
+    };
+
+    querySomeAsset();
+  }, []);
+
+  return (
+    <View>
+      {assetInfo ? (
+        <View>
+          <Text>Asset ID: {assetInfo.id}</Text>
+          <Text>Filename: {assetInfo.filename}</Text>
+          <Text>Media Type: {assetInfo.mediaType}</Text>
+          <Text>
+            Dimensions: {assetInfo.width} x {assetInfo.height}
+          </Text>
+          <Text>
+            Creation Time:{' '}
+            {assetInfo.creationTime
+              ? new Date(assetInfo.creationTime).toLocaleString()
+              : 'Unavailable'}
+          </Text>
+          <Text>
+            Modification Time:{' '}
+            {assetInfo.modificationTime
+              ? new Date(assetInfo.modificationTime).toLocaleString()
+              : 'Unavailable'}
+          </Text>
+        </View>
+      ) : (
+        <Text>Fetching asset ...</Text>
+      )}
+    </View>
+  );
+}
+```
+
+</details>
+
+<details><summary>创建新相册</summary>
+
+```tsx
+import { View, Text, FlatList, Image, Button } from 'react-native';
+import { useState } from 'react';
+import {
+  Asset,
+  AssetField,
+  MediaType,
+  Query,
+  requestPermissionsAsync,
+  Album,
+} from 'expo-media-library';
+
+export default function CreateAlbumExample() {
+  const [assets, setAssets] = useState<Asset[]>([]);
+  const [album, setAlbum] = useState<Album | null>(null);
+  const [albumTitle, setAlbumTitle] = useState<string>('');
+
+  const createAlbumWithAsset = async () => {
+    await requestPermissionsAsync();
+
+    const [asset] = await new Query().limit(1).eq(AssetField.MEDIA_TYPE, MediaType.IMAGE).exe();
+
+    if (!asset) {
+      console.log('No assets found in the media library.');
+      return;
+    }
+
+    const newAlbum = await Album.create('MyNewAlbum', [asset]);
+
+    setAlbum(newAlbum);
+    setAlbumTitle(await newAlbum.getTitle());
+    const albumAssets = await newAlbum.getAssets();
+    setAssets(albumAssets);
+  };
+
+  return (
+    <View style={{ flex: 1, padding: 20 }}>
+      <Button title="Create album and add asset" onPress={createAlbumWithAsset} />
+
+      {assets.length > 0 ? (
+        <>
+          <Text style={{ marginTop: 20, fontSize: 18, fontWeight: 'bold' }}>
+            Assets in {albumTitle}:
+          </Text>
+          <FlatList
+            data={assets}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => (
+              <View style={{ marginVertical: 10 }}>
+                <Image
+                  source={{ uri: item.id }}
+                  style={{ width: 100, height: 100, borderRadius: 8 }}
+                />
+              </View>
+            )}
+          />
+        </>
+      ) : (
+        <Text style={{ marginTop: 20 }}>{album ? 'Album is empty.' : 'No album created yet.'}</Text>
+      )}
+    </View>
+  );
+}
+```
+
+</details>
+
+## API

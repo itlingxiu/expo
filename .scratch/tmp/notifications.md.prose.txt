@@ -1,0 +1,163 @@
+1|---
+2|title: Notifications
+3|description: A library that provides an API to fetch push notification tokens and to present, schedule, receive and respond to notifications.
+4|packageName: expo-notifications
+5|---
+7|# Notifications
+9|> 支持平台：Android、iOS。
+11|`expo-notifications` provides an API to fetch push notification tokens and to present, schedule, receive and respond to notifications.
+13|- [Notification guides](/push-notifications/overview)：Do not miss our guides on how to set up, send, and handle push notifications.
+15|:::warning
+16|Push notifications (remote notifications) functionality provided by `expo-notifications` is unavailable in Expo Go on Android from SDK 53. A [development build](/develop/development-builds/introduction) is required to use push notifications. Local notifications (in-app notifications) remain available in Expo Go.
+17|:::
+19|## Features
+21|- Schedule a one-off notification for a specific date or some time from now
+22|- Schedule a notification repeating in some time interval (or a calendar date match on iOS)
+23|- Get and set the application badge icon number
+24|- Obtain a native device push token, so you can send push notifications with FCM (for Android) and APNs (for iOS)
+25|- Obtain an Expo push token, so you can send push notifications with [Expo Push Service](/push-notifications/sending-notifications)
+26|- Listen to incoming notifications in the foreground and background
+27|- Listen to interactions with notifications
+28|- Handle notifications when the app is in the foreground
+29|- Imperatively dismiss notifications from Notification Center/tray
+30|- Create, update, and delete [Android notification channels](https://developer.android.com/develop/ui/views/notifications/channels)
+31|- Set custom icon and color for notifications on Android
+33|## Installation
+35|:::tabs
+36|:::tab npm
+40|:::
+41|:::tab yarn
+45|:::
+46|:::tab pnpm
+50|:::
+51|:::tab bun
+55|:::
+56|:::
+58|Then proceed to [configuration](#configuration) to set up the [config plugin](#app-config) and
+59|obtain the [credentials](#credentials) for push notifications.
+61|### Known issues （Android）
+63|When launching the app from a push notification in **Android development builds**, the splash screen may fail to display correctly about 70% of the time. The icon and fade animation may not appear as expected.
+65|- Icon may be missing
+66|- Fade animation may not run
+67|- Only the background color may flash briefly
+69|This issue only affects debug builds and does not occur in release builds. To workaround it, test notification launches in release mode (`npx expo run:android --variant release`) for accurate behavior.
+71|## Usage
+73|Check out the example Snack below to see Notifications in action. Push notifications work on physical devices, Android emulators with Google Play services, and iOS simulators on Xcode 14 or later (macOS 13+, iOS 16+).
+204|### Present a local (in-app) notification to the user
+218|### Handle push notifications with navigation
+220|If you'd like to deep link to a specific screen in your app when you receive a push notification, you can configure either of Expo's navigation systems to do that.
+222|:::tabs
+223|:::tab Expo Router
+224|You can use Expo Router's [built-in deep linking](/router/basics/core-concepts#2-all-pages-have-a-url) to handle incoming URLs from push notifications. Simply configure the root layout to listen for incoming and initial notification events.
+271|:::
+273|:::tab React Navigation
+274|React Navigation's manual [linking configuration](https://reactnavigation.org/docs/navigation-container#linking) can be configured to handle incoming redirects from push notifications:
+340|See more details on [React Navigation documentation](https://reactnavigation.org/docs/deep-linking/#third-party-integrations).
+341|:::
+342|:::
+344|## Configuration
+346|### Credentials
+348|Follow the [setup guide](/push-notifications/push-notifications-setup#get-credentials-for-development-builds).
+350|### App config
+352|To configure `expo-notifications`, use the built-in [config plugin](/config-plugins/introduction) in the app config (**app.json** or **app.config.js**) for [EAS Build](/build/introduction) or with `npx expo run:[android|ios]`. The plugin allows you to configure the following properties that cannot be set at runtime and require building a new app binary to take effect:
+354|### Configurable properties
+356|| Name | Default | Description |
+357|| --- | --- | --- |
+358|| `icon` | - | Only for: Android. Local path to an image to use as the icon for push notifications. 96x96 all-white png with transparency. |
+359|| `largeIcon` | - | Only for: Android. Local path to an image to use as the large icon for notifications. The image is resized to 64x64 dp and shown next to the notification text. A notification that carries its own image uses that image instead. |
+360|| `color` | `#ffffff` | Only for: Android. Tint color for the push notification image when it appears in the notification tray. |
+361|| `defaultChannel` | - | Only for: Android. Default channel for FCMv1 notifications. |
+362|| `sounds` | - | Array of local paths to sound files (.wav recommended) that can be used as custom notification sounds. Sound will not be played when focus mode does not permit it or silent mode is on. |
+363|| `enableBackgroundRemoteNotifications` | `false` | Only for: iOS. Whether to enable background remote notifications, as described in [Apple documentation](https://developer.apple.com/documentation/usernotifications/pushing-background-updates-to-your-app). This updates the `UIBackgroundModes` key in the `Info.plist` to include `remote-notification`. |
+365|Here is an example of using the config plugin in the app config file:
+390|> The iOS APNs entitlement is _always_ set to 'development'. Xcode automatically changes this to 'production' in the archive generated by a release build.
+391|> See [this Stack Overflow answer on the APNs entitlement](https://stackoverflow.com/a/42293632/4047926).
+393|<details><summary>Are you using this library in an existing React Native app?</summary>
+395|Learn how to configure the native projects in the [installation instructions in the `expo-notifications` repository](https://github.com/expo/expo/tree/main/packages/expo-notifications#installation-in-bare-react-native-projects).
+397|</details>
+399|## Permissions
+401|### Android
+403|- On Android, this module requires permission to subscribe to the device boot. It's used to set up scheduled notifications when the device (re)starts.
+404|  The `RECEIVE_BOOT_COMPLETED` permission is added automatically through the library's **AndroidManifest.xml**.
+406|- Starting from Android 12 (API level 31), to schedule a notification that triggers at an exact time, you need to add
+407|  `<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>` to **AndroidManifest.xml**.
+408|  Read more about the [exact alarm permission](https://developer.android.com/about/versions/12/behavior-changes-12#exact-alarm-permission).
+409|  The `delivery: 'alarmClock'` trigger option also requires an exact alarm permission. On Android 13 (API level 33) and later, alarm clock, timer, and calendar apps
+410|  can declare `<uses-permission android:name="android.permission.USE_EXACT_ALARM"/>` instead. The system grants that permission without a user prompt.
+411|  [Google Play's exact alarm policy](https://support.google.com/googleplay/android-developer/answer/13161072) restricts `USE_EXACT_ALARM` to those app categories.
+413|- On Android 13, app users must opt-in to receive notifications via a permissions prompt automatically triggered by the operating system.
+414|  This prompt will not appear until at least one notification channel is created. The `setNotificationChannelAsync` must be called before
+415|  `getDevicePushTokenAsync` or `getExpoPushTokenAsync` to obtain a push token. You can read more about the new notification permission behavior for Android 13
+416|  in the [official documentation](https://developer.android.com/develop/ui/views/notifications/notification-permission#new-apps).
+418|| Android permission | Description |
+419|| --- | --- |
+420|| `RECEIVE_BOOT_COMPLETED` | Allows an application to receive the Intent.ACTION_BOOT_COMPLETED that is broadcast after the system finishes booting. Allows an application to receive the `[Intent.ACTION_BOOT_COMPLETED](https://developer.android.com/reference/android/content/Intent#ACTION_BOOT_COMPLETED)` that is broadcast after the system finishes booting. If you don't request this permission, you will not receive the broadcast at that time. Though holding this permission does not have any security implications, it can have a negative impact on the user experience by increasing the amount of time it takes the system to start and allowing applications to have themselves running without the user being aware of them. As such, you must explicitly declare your use of this facility to make that visible to the user. |
+421|| `SCHEDULE_EXACT_ALARM` | Allows applications to use exact alarm APIs. |
+422|| `USE_EXACT_ALARM` | Allows apps to use exact alarms just like with SCHEDULE_EXACT_ALARM but without needing to request this permission from the user. Allows apps to use exact alarms just like with `[SCHEDULE_EXACT_ALARM](https://developer.android.com/reference/android/Manifest.permission#SCHEDULE_EXACT_ALARM)` but without needing to request this permission from the user. |
+424|### iOS
+426|No usage description is required, see [notification-related permissions](#fetch-information-about-notifications-related-permissions).
+428|### Interpret the iOS permissions response
+430|On iOS, permissions for sending notifications are a little more granular than they are on Android. This is why you should rely on the `NotificationPermissionsStatus`'s `ios.status` field, instead of the root `status` field.
+432|This value will be one of the following, accessible under `Notifications.IosAuthorizationStatus`:
+434|- `NOT_DETERMINED`: The user hasn't yet made a choice about whether the app is allowed to schedule notifications
+435|- `DENIED`: The app isn't authorized to schedule or receive notifications
+436|- `AUTHORIZED`: The app is authorized to schedule or receive notifications
+437|- `PROVISIONAL`: The app is provisionally authorized to post noninterruptive user notifications
+438|- `EPHEMERAL`: The app is authorized to schedule or receive notifications for a limited amount of time
+440|## Notification events listeners
+442|Notification events include incoming notifications, interactions your users perform with notifications (this can be tapping on a notification, or interacting with it via [notification categories](#manage-notification-categories-interactive-notifications)), and rare occasions when your notifications may be dropped.
+444|Several listeners are exposed and documented in the [Push notification behaviors](/push-notifications/what-you-need-to-know#push-notification-behaviors) section.
+446|## Headless (Background) notifications
+448|See the [definition](/push-notifications/what-you-need-to-know#headless-background-notifications) of Headless Background Notifications in the [What you need to know](/push-notifications/what-you-need-to-know) guide.
+450|To handle notifications while the app is in the background or not running, you need to do the following:
+452|- Add `expo-task-manager` package to your project.
+453|- [Configure background notifications](#background-notification-configuration).
+454|- In your application code, set up a [background task](#registertaskasynctaskname) to run when the notification is received.
+456|Then send a push notification which:
+458|- Contains only the `data` key (no `title`, `body`)
+459|- Has `contentAvailable: true` set for iOS — see the [Expo push notification service payload format](/push-notifications/sending-notifications#message-request-format)
+461|### Background notification configuration （iOS）
+463|To be able to use headless (background) notifications push notifications on iOS, the `remote-notification` value needs to be present in the `UIBackgroundModes` array in your app's **Info.plist** file.
+465|**If you're using [CNG](/workflow/continuous-native-generation)**, set the [`enableBackgroundRemoteNotifications` property](#configurable-properties) of the config plugin to true, and the correct configuration will be applied automatically by prebuild.
+467|<details><summary>Configure UIBackgroundModes manually on iOS</summary>
+469|If you're not using Continuous Native Generation ([CNG](/workflow/continuous-native-generation)) or you're using a native iOS project, then you'll need to add the following to your **Expo.plist** file:
+478|</details>
+480|## Additional information
+482|### Set custom notification sounds
+484|To add custom push notification sounds to your app, add the `expo-notifications` plugin to your **app.json** file and then under the `sounds` key, provide an array of local paths to sound files that can be used as custom notification sounds. These local paths are local to your project.
+501|After building your app, the array of files will be available for use in both [`NotificationContentInput`](#notificationcontentinput) and [`NotificationChannelInput`](#notificationchannelinput).
+502|You only need to provide the base filename. Here's an example using the config above:
+524|You can also manually add notification files to your Android and iOS projects if you prefer:
+526|<details><summary>Manually adding notification sounds on Android</summary>
+528|On Androids 8.0+, playing a custom sound for a notification requires more than setting the `sound` property on the `NotificationContentInput`.
+529|You will also need to configure the `NotificationChannel` with the appropriate `sound`, and use it when sending/scheduling the notification.
+531|For the example below to work, you would place your **email_sound.wav** file in **android/app/src/main/res/raw/**.
+556|</details>
+558|<details><summary>Manually adding notification sounds on iOS</summary>
+560|On iOS, all that's needed is to place your sound file in your Xcode project (see the screenshot below),
+561|and then specify the sound file in your `NotificationContentInput`, like this:
+576|![notification.wav inside of app resources in Xcode project organizer](/static/images/notification-sound-ios.jpeg)
+578|</details>
+580|### Push notification payload specification
+582|See [Message request format](/push-notifications/sending-notifications#message-request-format).
+584|### Manage notification categories for interactive notifications
+586|Notification categories allow you to create interactive push notifications, so that a user can respond directly to the incoming notification
+587|either via buttons or a text response. A category defines the set of actions a user can take, and then those actions are applied to a notification
+588|by specifying the `categoryIdentifier` in the [`NotificationContent`](#notificationcontent).
+590|![Image of notification categories on Android and iOS](/static/images/sdk/notifications/categories.webp)
+592|On iOS, notification categories also allow you to customize your notifications further. With each category, you can set the interactive actions a user can take and configure things like the placeholder text to display when the user disables notification previews for your app.
+594|## Platform-specific guides
+596|### Handling notification channels （android 8+）
+598|Starting in Android 8.0 (API level 26), all notifications must be assigned to a channel. For each channel,
+599|you can set the visual and auditory behavior that is applied to all notifications in that channel.
+600|Then, users can change these settings and decide which notification channels from your app should be intrusive or visible at all,
+601|as [Android developer docs](https://developer.android.com/training/notify-user/channels) states.
+603|If you do not specify a notification channel, `expo-notifications` will create a fallback channel for you, named **Miscellaneous**.
+604|We encourage you to always ensure appropriate channels with informative names are set up for the application and to always send notifications to these channels.
+606|> Calling these methods is a no-op for platforms that do not support this feature (Android below version 8.0 (26) and iOS).
+608|### Custom notification icon and colors （Android）
+610|You can configure the `icon` and `color` keys for notification in the project by using the [`expo-notifications` config plugin](#configurable-properties) with [Expo Prebuild](/workflow/continuous-native-generation). These are build-time settings, so you'll need to recompile your native Android app with `eas build -p android` or `npx expo run:android` to see the changes.
+612|For your notification icon, make sure you follow [Google's design guidelines](https://m2.material.io/design/iconography/product-icons.html#design-principles)
+613|(the icon must be all white with a transparent background) or else it may not be displayed as intended.
+615|You can also set a custom notification color **per-notification** directly in your [`NotificationContentInput`](#notificationcontentinput) under the `color` attribute.
+617|## API

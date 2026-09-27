@@ -1,0 +1,88 @@
+   1 ---
+   2 title: TextField 组件参考
+   3 description: A SwiftUI TextField component for text input.
+   4 ---
+   5 
+   6 # TextField 组件参考
+   7 
+   8 > 支持平台：iOS、tvOS、Expo Go。
+   9 
+  10 > **info** For cross-platform usage, see the universal [`TextInput`](/versions/latest/sdk/ui/universal/textinput) — it renders the appropriate native component per platform.
+  11 
+  12 Expo UI TextField matches the official SwiftUI [TextField API](https://developer.apple.com/documentation/swiftui/textfield) and supports single-line and multiline input, keyboard configuration, submit handling, and an imperative `ref` for programmatic control.
+  13 
+  14 ![TextField and SecureField inside a Form](/static/images/expo-ui/textfield/ios-light.webp)
+  15 
+  16 ## Installation
+  17 
+  18 :::tabs
+  19 :::tab npm
+  23 :::
+  24 :::tab yarn
+  28 :::
+  29 :::tab pnpm
+  33 :::
+  34 :::tab bun
+  38 :::
+  39 :::
+  40 
+  41 ## Usage
+  42 
+  43 ### Uncontrolled text field
+  44 
+  45 Bind a [`useNativeState`](usenativestate) observable to `text`. The field tracks the user's input on its own, and you read the current value from `textState.value`.
+  46 
+  47 ![An empty text field showing the placeholder Username](/static/images/expo-ui/examples/textfield-basic-ios-light.webp)
+  48 
+  63 
+  64 ### Controlled text field
+  65 
+  66 Pass an `onTextChange` worklet to transform or validate input and write the result back to the [`useNativeState`](usenativestate) observable state. The example below uppercases the text as it is typed.
+  67 
+  68 > **Note:** Worklets require installing [`react-native-worklets`](https://docs.swmansion.com/react-native-worklets).
+  69 
+  70 ![An empty text field showing the placeholder Name](/static/images/expo-ui/examples/textfield-controlled-ios-light.webp)
+  71 
+  98 
+  99 ### Multiline text field
+ 100 
+ 101 Set `axis="vertical"` to allow the text field to expand vertically. Use the [`lineLimit`](modifiers#linelimit) modifier to control the visible line count. Give the `Host` an explicit size so the field has a width to expand within.
+ 102 
+ 103 ![An empty multiline text field showing the placeholder Tell us about yourself](/static/images/expo-ui/examples/textfield-multiline-ios-light.webp)
+ 104 
+ 127 
+ 128 ### Keyboard type
+ 129 
+ 130 Use the [`keyboardType`](modifiers#keyboardtypekeyboardtype) modifier to display a specific keyboard layout.
+ 131 
+ 132 ![An empty text field showing the placeholder Email](/static/images/expo-ui/examples/textfield-keyboard-type-ios-light.webp)
+ 133 
+ 158 
+ 159 ### Submit handling
+ 160 
+ 161 Use the [`submitLabel`](modifiers#submitlabelsubmitlabel) modifier to customize the return key and [`onSubmit`](modifiers#onsubmithandler) to handle the submit action.
+ 162 
+ 163 ![An empty text field showing the placeholder Search](/static/images/expo-ui/examples/textfield-submit-ios-light.webp)
+ 164 
+ 188 
+ 189 ### Imperative ref
+ 190 
+ 191 Use a `ref` to imperatively set text, focus, blur, or select text.
+ 192 
+ 193 > **Note:** `setSelection` requires iOS 18.0+ / tvOS 18.0+. The other ref methods work on all supported versions.
+ 194 
+ 195 ![A text field reading Select me! above a row of Focus, Blur, Set text, Clear, and Select buttons](/static/images/expo-ui/examples/textfield-imperative-ios-light.webp)
+ 196 
+ 256 
+ 257 ### Worklet text masking
+ 258 
+ 259 When `onTextChange` is marked with the `'worklet'` directive, it runs synchronously on the UI thread, so writes to [`useNativeState`](usenativestate) observables inside the callback take effect before the next frame. There is no flicker between the typed text and the masked text. The example below masks a phone number as the user types and writes both `text` and `selection` from the worklet to keep the cursor at the end of the formatted value.
+ 260 
+ 261 > **Note:** Worklets require installing [`react-native-worklets`](https://docs.swmansion.com/react-native-worklets). The `selection` prop requires iOS 18.0+ / tvOS 18.0+. On older versions the worklet can still update the text but cursor positioning is unavailable.
+ 262 
+ 263 ![An empty text field showing the placeholder formatted as a phone number](/static/images/expo-ui/examples/textfield-worklet-mask-ios-light.webp)
+ 264 
+ 309 
+ 310 ## API
+ 311 
+ 315 

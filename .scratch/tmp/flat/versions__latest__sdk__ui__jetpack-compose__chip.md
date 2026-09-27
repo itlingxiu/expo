@@ -1,0 +1,181 @@
+---
+title: Chip 组件参考
+description: Jetpack Compose Chip components for displaying compact elements.
+---
+
+# Chip 组件参考
+
+> 支持平台：Android、Expo Go。
+
+Expo UI Chips match the official Jetpack Compose [Chip API](https://developer.android.com/develop/ui/compose/components/chip). Each chip type is a separate component: `AssistChip`, `FilterChip`, `InputChip`, and `SuggestionChip`.
+
+![Filter, assist, and suggestion Material 3 chips](/static/images/expo-ui/chip/android-light.webp)
+
+## Installation
+
+:::tabs
+:::tab npm
+```sh
+npx expo install @expo/ui
+```
+:::
+:::tab yarn
+```sh
+yarn expo install @expo/ui
+```
+:::
+:::tab pnpm
+```sh
+pnpm expo install @expo/ui
+```
+:::
+:::tab bun
+```sh
+bun expo install @expo/ui
+```
+:::
+:::
+
+## Usage
+
+### Assist chip
+
+Assist chips help users take actions or start tasks, such as booking a flight or opening a map. They often appear as temporary UI elements in response to user input.
+
+![An outlined assist chip with an airplane icon and the label Book flight](/static/images/expo-ui/examples/chip-assist-android-light.webp)
+
+```tsx AssistChipExample.tsx
+import {
+  Host,
+  AssistChip,
+  Icon,
+  Text,
+} from '@expo/ui/jetpack-compose';
+
+export default function AssistChipExample() {
+  return (
+    <Host matchContents>
+      <AssistChip
+        onClick={() => console.log('Opening flight booking...')}>
+        <AssistChip.Label>
+          <Text>Book flight</Text>
+        </AssistChip.Label>
+        <AssistChip.LeadingIcon>
+          <Icon source={require('./assets/flight.xml')} size={18} />
+        </AssistChip.LeadingIcon>
+      </AssistChip>
+    </Host>
+  );
+}
+```
+
+### Filter chip
+
+Filter chips allow users to refine content from a set of options. They support a selected state and are commonly used in search bars or content filtering.
+
+![A filter chip labeled Images shown in its selected filled state](/static/images/expo-ui/examples/chip-filter-android-light.webp)
+
+```tsx FilterChipExample.tsx
+import { useState } from 'react';
+import { Host, FilterChip, Text } from '@expo/ui/jetpack-compose';
+
+export default function FilterChipExample() {
+  const [selected, setSelected] = useState(false);
+
+  return (
+    <Host matchContents>
+      <FilterChip
+        selected={selected}
+        onClick={() => setSelected(!selected)}>
+        <FilterChip.Label>
+          <Text>Images</Text>
+        </FilterChip.Label>
+      </FilterChip>
+    </Host>
+  );
+}
+```
+
+### Input chip
+
+Input chips represent discrete pieces of information entered by a user, such as tags in a text field. They support avatars, trailing icons, and can be dismissed.
+
+![Three input chips labeled Work, Travel, and News, each with a close icon](/static/images/expo-ui/examples/chip-input-android-light.webp)
+
+```tsx InputChipExample.tsx
+import { useState } from 'react';
+import {
+  Host,
+  InputChip,
+  Icon,
+  Text,
+  FlowRow,
+} from '@expo/ui/jetpack-compose';
+
+export default function InputChipExample() {
+  const [chips, setChips] = useState(['Work', 'Travel', 'News']);
+
+  return (
+    <Host matchContents>
+      <FlowRow horizontalArrangement={{ spacedBy: 8 }}>
+        {chips.map(label => (
+          <InputChip
+            key={label}
+            selected
+            onClick={() =>
+              setChips(prev => prev.filter(c => c !== label))
+            }>
+            <InputChip.Label>
+              <Text>{label}</Text>
+            </InputChip.Label>
+            <InputChip.TrailingIcon>
+              <Icon
+                source={require('./assets/close.xml')}
+                size={18}
+              />
+            </InputChip.TrailingIcon>
+          </InputChip>
+        ))}
+      </FlowRow>
+    </Host>
+  );
+}
+```
+
+### Suggestion chip
+
+Suggestion chips help narrow a user's intent by presenting dynamically generated suggestions, such as quick-reply options in a chat or search refinements.
+
+![An outlined suggestion chip labeled Nearby](/static/images/expo-ui/examples/chip-suggestion-android-light.webp)
+
+```tsx SuggestionChipExample.tsx
+import {
+  Host,
+  SuggestionChip,
+  Text,
+} from '@expo/ui/jetpack-compose';
+
+export default function SuggestionChipExample() {
+  return (
+    <Host matchContents>
+      <SuggestionChip
+        onClick={() => console.log('Searching nearby...')}>
+        <SuggestionChip.Label>
+          <Text>Nearby</Text>
+        </SuggestionChip.Label>
+      </SuggestionChip>
+    </Host>
+  );
+}
+```
+
+## API
+
+```tsx
+import {
+  AssistChip,
+  FilterChip,
+  InputChip,
+  SuggestionChip,
+} from '@expo/ui/jetpack-compose';
+```

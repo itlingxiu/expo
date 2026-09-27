@@ -1,0 +1,146 @@
+[
+  {
+    "name": "data",
+    "path": "docs/public/static/data",
+    "sha": "7f9beb77c47fb2140ca608520bb9dd198857ce8b",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/public/static/data?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/public/static/data",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/7f9beb77c47fb2140ca608520bb9dd198857ce8b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/public/static/data?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/7f9beb77c47fb2140ca608520bb9dd198857ce8b",
+      "html": "https://github.com/expo/expo/tree/main/docs/public/static/data"
+    }
+  },
+  {
+    "name": "diffs",
+    "path": "docs/public/static/diffs",
+    "sha": "85bb144749878c6d31d74fd26f8558dcbd791d3b",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/public/static/diffs?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/public/static/diffs",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/85bb144749878c6d31d74fd26f8558dcbd791d3b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/public/static/diffs?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/85bb144749878c6d31d74fd26f8558dcbd791d3b",
+      "html": "https://github.com/expo/expo/tree/main/docs/public/static/diffs"
+    }
+  },
+  {
+    "name": "examples",
+    "path": "docs/public/static/examples",
+    "sha": "d25a66c7a1ac5a62342d99012e8ab26169c8c31c",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/public/static/examples?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/public/static/examples",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/d25a66c7a1ac5a62342d99012e8ab26169c8c31c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/public/static/examples?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/d25a66c7a1ac5a62342d99012e8ab26169c8c31c",
+      "html": "https://github.com/expo/expo/tree/main/docs/public/static/examples"
+    }
+  },
+  {
+    "name": "images",
+    "path": "docs/public/static/images",
+    "sha": "d410d288791b559adc08ba9fbefc6a9dacc65301",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/public/static/images?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/public/static/images",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/d410d288791b559adc08ba9fbefc6a9dacc65301",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/public/static/images?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/d410d288791b559adc08ba9fbefc6a9dacc65301",
+      "html": "https://github.com/expo/expo/tree/main/docs/public/static/images"
+    }
+  },
+  {
+    "name": "libs",
+    "path": "docs/public/static/libs",
+    "sha": "bddf0c86d727faef6d66515a5bd1dd924b1b1607",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/public/static/libs?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/public/static/libs",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/bddf0c86d727faef6d66515a5bd1dd924b1b1607",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/public/static/libs?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/bddf0c86d727faef6d66515a5bd1dd924b1b1607",
+      "html": "https://github.com/expo/expo/tree/main/docs/public/static/libs"
+    }
+  },
+  {
+    "name": "schemas",
+    "path": "docs/public/static/schemas",
+    "sha": "1b6063a29e81b56d04db198bbcb276ab63d9497f",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/public/static/schemas?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/public/static/schemas",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/1b6063a29e81b56d04db198bbcb276ab63d9497f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/public/static/schemas?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/1b6063a29e81b56d04db198bbcb276ab63d9497f",
+      "html": "https://github.com/expo/expo/tree/main/docs/public/static/schemas"
+    }
+  },
+  {
+    "name": "talks.ts",
+    "path": "docs/public/static/talks.ts",
+    "sha": "6023f5739a4e6164202a88e8bfea5c326242a878",
+    "size": 30087,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/public/static/talks.ts?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/public/static/talks.ts",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/6023f5739a4e6164202a88e8bfea5c326242a878",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/public/static/talks.ts",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/public/static/talks.ts?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/6023f5739a4e6164202a88e8bfea5c326242a878",
+      "html": "https://github.com/expo/expo/blob/main/docs/public/static/talks.ts"
+    }
+  },
+  {
+    "name": "thumbnails",
+    "path": "docs/public/static/thumbnails",
+    "sha": "26249f4b81cbffe4acab0fd807a790cdc07cfdbc",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/public/static/thumbnails?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/public/static/thumbnails",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/26249f4b81cbffe4acab0fd807a790cdc07cfdbc",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/public/static/thumbnails?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/26249f4b81cbffe4acab0fd807a790cdc07cfdbc",
+      "html": "https://github.com/expo/expo/tree/main/docs/public/static/thumbnails"
+    }
+  },
+  {
+    "name": "videos",
+    "path": "docs/public/static/videos",
+    "sha": "4e73379dcf56dd709647dcadfce0b2c734b8e985",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/public/static/videos?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/public/static/videos",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/4e73379dcf56dd709647dcadfce0b2c734b8e985",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/public/static/videos?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/4e73379dcf56dd709647dcadfce0b2c734b8e985",
+      "html": "https://github.com/expo/expo/tree/main/docs/public/static/videos"
+    }
+  }
+]

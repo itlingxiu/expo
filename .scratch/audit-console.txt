@@ -1,0 +1,61 @@
+﻿缂哄け椤甸潰: 560
+鐤戜技鏈瘧瀹岀殑宸叉湁椤甸潰: 2
+
+=== 鐤戜技鑻辨枃娈嬬暀 ===
+  versions/v54.0.0/sdk/live-photo  涓枃30 鑻辨枃59 鍗犳瘮0.34
+  versions/latest/sdk/router/color  涓枃34 鑻辨枃36 鍗犳瘮0.49
+
+=== 缈昏瘧鎵规 ===
+  .scratch/batches/b01-versions.txt  20
+  .scratch/batches/b02-versions.txt  20
+  .scratch/batches/b03-versions.txt  20
+  .scratch/batches/b04-versions.txt  20
+  .scratch/batches/b05-versions.txt  20
+  .scratch/batches/b06-versions.txt  20
+  .scratch/batches/b07-versions.txt  20
+  .scratch/batches/b08-versions.txt  20
+  .scratch/batches/b09-versions.txt  20
+  .scratch/batches/b10-versions.txt  20
+  .scratch/batches/b11-versions.txt  19
+  .scratch/batches/b12-eas.txt  18
+  .scratch/batches/b13-eas.txt  18
+  .scratch/batches/b14-eas.txt  13
+  .scratch/batches/b15-router.txt  18
+  .scratch/batches/b16-router.txt  18
+  .scratch/batches/b17-router.txt  12
+  .scratch/batches/b18-guides.txt  18
+  .scratch/batches/b19-guides.txt  16
+  .scratch/batches/b20-tutorial.txt  18
+  .scratch/batches/b21-tutorial.txt  16
+  .scratch/batches/b22-eas-update.txt  18
+  .scratch/batches/b23-eas-update.txt  10
+  .scratch/batches/b24-build-reference.txt  18
+  .scratch/batches/b25-build-reference.txt  4
+  .scratch/batches/b26-modules.txt  18
+  .scratch/batches/b27-modules.txt  1
+  .scratch/batches/b28-workflow.txt  12
+  .scratch/batches/b29-build.txt  9
+  .scratch/batches/b30-push-notifications.txt  8
+  .scratch/batches/b31-troubleshooting.txt  8
+  .scratch/batches/b32-agents.txt  6
+  .scratch/batches/b33-app-signing.txt  6
+  .scratch/batches/b34-bare.txt  6
+  .scratch/batches/b35-billing.txt  6
+  .scratch/batches/b36-more.txt  6
+  .scratch/batches/b37-submit.txt  6
+  .scratch/batches/b38-eas-insights.txt  5
+  .scratch/batches/b39-brownfield.txt  4
+  .scratch/batches/b40-debugging.txt  4
+  .scratch/batches/b41-distribution.txt  4
+  .scratch/batches/b42-custom-builds.txt  3
+  .scratch/batches/b43-regulatory-compliance.txt  3
+  .scratch/batches/b44-technical-specs.txt  2
+  .scratch/batches/b45-accounts.txt  1
+  .scratch/batches/b46-additional-resources.txt  1
+  .scratch/batches/b47-core-concepts.txt  1
+  .scratch/batches/b48-faq.txt  1
+  .scratch/batches/b49-linking.txt  1
+  .scratch/batches/b50-llms.txt  1
+  .scratch/batches/b51-mcp.txt  1
+  .scratch/batches/b52-monitoring.txt  1
+  .scratch/batches/b53-skills.txt  1

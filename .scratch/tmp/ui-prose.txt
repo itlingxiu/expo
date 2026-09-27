@@ -1,0 +1,165 @@
+3|description: A set of components that allow you to build UIs directly with Jetpack Compose and SwiftUI from React.
+7|# Expo UI
+9|> 支持平台：Android、iOS、tvOS、Expo Go。
+13|## Features
+19|## Available platforms
+21|Components are available for the following platforms:
+27|Start with **[Universal](/versions/latest/sdk/ui/universal)** when you want one component tree that runs unmodified on Android, iOS, and web. Reach for **[Jetpack Compose](/versions/latest/sdk/ui/jetpack-compose)** or **[SwiftUI](/versions/latest/sdk/ui/swift-ui)** directly when you need platform-specific controls, modifiers, or behavior that the universal API doesn't cover.
+29|## Drop-in replacements
+31|See **[Drop-in replacements](/versions/latest/sdk/ui/drop-in-replacements)** for API-compatible replacements for popular React Native community libraries.
+33|## Expo Skills for AI agents
+35|If you use an AI agent, install [Expo Skills](/skills) to teach it how to build native-feeling screens:
+37|- [expo-ui](https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-ui/SKILL.md)：Build native UI with the @expo/ui package: real SwiftUI on iOS and Jetpack Compose on Android.
+38|- [expo-native-ui](https://github.com/expo/skills/blob/main/plugins/expo/skills/expo-native-ui/SKILL.md)：Build beautiful, native-feeling Expo screens.
+40|## Available components
+42|### Jetpack Compose
+46|- [AlertDialog](/versions/latest/sdk/ui/jetpack-compose/alertdialog)：AlertDialog component for displaying native alert dialogs.
+50|- [Badge](/versions/latest/sdk/ui/jetpack-compose/badge)：Badge component for displaying status indicators and counts.
+54|- [BadgedBox](/versions/latest/sdk/ui/jetpack-compose/badgedbox)：BadgedBox component for overlaying badges on content.
+58|- [BasicAlertDialog](/versions/latest/sdk/ui/jetpack-compose/basicalertdialog)：BasicAlertDialog component for displaying dialogs with custom content.
+62|- [Box](/versions/latest/sdk/ui/jetpack-compose/box)：Box component for stacking child elements.
+66|- [Button](/versions/latest/sdk/ui/jetpack-compose/button)：Button components for displaying native Material3 buttons.
+70|- [Card](/versions/latest/sdk/ui/jetpack-compose/card)：Card component for displaying content in a styled container.
+74|- [Carousel](/versions/latest/sdk/ui/jetpack-compose/carousel)：Carousel components for displaying scrollable collections of items.
+78|- [Checkbox](/versions/latest/sdk/ui/jetpack-compose/checkbox)：Checkbox component for selection controls.
+82|- [Chip](/versions/latest/sdk/ui/jetpack-compose/chip)：Chip components for displaying compact elements.
+86|- [Column](/versions/latest/sdk/ui/jetpack-compose/column)：Column component for placing children vertically.
+90|- [DateTimePicker](/versions/latest/sdk/ui/jetpack-compose/datetimepicker)：DateTimePicker component for selecting dates and times.
+94|- [Divider](/versions/latest/sdk/ui/jetpack-compose/divider)：Divider components for creating visual separators.
+98|- [DockedSearchBar](/versions/latest/sdk/ui/jetpack-compose/dockedsearchbar)：DockedSearchBar component for displaying an inline search input.
+102|- [DropdownMenu](/versions/latest/sdk/ui/jetpack-compose/dropdownmenu)：DropdownMenu component for displaying dropdown menus.
+106|- [ExposedDropdownMenuBox](/versions/latest/sdk/ui/jetpack-compose/exposeddropdownmenubox)：ExposedDropdownMenuBox component for displaying a dropdown menu with a customizable anchor.
+110|- [FloatingActionButton](/versions/latest/sdk/ui/jetpack-compose/floatingactionbutton)：FloatingActionButton components following Material Design 3.
+114|- [FlowRow](/versions/latest/sdk/ui/jetpack-compose/flowrow)：FlowRow component for wrapping children horizontally.
+118|- [HorizontalFloatingToolbar](/versions/latest/sdk/ui/jetpack-compose/horizontalfloatingtoolbar)：HorizontalFloatingToolbar component for displaying a floating action bar.
+122|- [HorizontalPager](/versions/latest/sdk/ui/jetpack-compose/horizontalpager)：HorizontalPager component for swipeable pages.
+124|- [Host](/versions/latest/sdk/ui/jetpack-compose/host)：Host component for bridging React Native and Jetpack Compose.
+128|- [Icon](/versions/latest/sdk/ui/jetpack-compose/icon)：Icon component for displaying icons.
+132|- [IconButton](/versions/latest/sdk/ui/jetpack-compose/iconbutton)：IconButton components for displaying native Material3 icon buttons.
+136|- [Image](/versions/latest/sdk/ui/jetpack-compose/image)：Image component for displaying images.
+140|- [LazyColumn](/versions/latest/sdk/ui/jetpack-compose/lazycolumn)：LazyColumn component for displaying scrollable lists.
+144|- [LazyRow](/versions/latest/sdk/ui/jetpack-compose/lazyrow)：LazyRow component for displaying horizontally scrolling lists.
+148|- [ListItem](/versions/latest/sdk/ui/jetpack-compose/listitem)：ListItem component for displaying structured list entries.
+152|- [LoadingIndicator](/versions/latest/sdk/ui/jetpack-compose/loadingindicator)：Loading indicator components for displaying loading state.
+156|- [Material Colors](/versions/latest/sdk/ui/jetpack-compose/colors)：Read the Material 3 color palette (including Material 3 Dynamic Colors) from JavaScript.
+160|- [ModalBottomSheet](/versions/latest/sdk/ui/jetpack-compose/bottomsheet)：ModalBottomSheet component that presents content from the bottom of the screen.
+162|- [Modifiers](/versions/latest/sdk/ui/jetpack-compose/modifiers)：Layout modifiers for @expo/ui components.
+166|- [NavigationBar](/versions/latest/sdk/ui/jetpack-compose/navigationbar)：NavigationBar component for Material 3 bottom navigation.
+170|- [Progress indicators](/versions/latest/sdk/ui/jetpack-compose/progress)：Progress indicator components for displaying operation status.
+174|- [PullToRefreshBox](/versions/latest/sdk/ui/jetpack-compose/pulltorefreshbox)：PullToRefreshBox component for pull-to-refresh interactions.
+178|- [RadioButton](/versions/latest/sdk/ui/jetpack-compose/radiobutton)：RadioButton component for single-selection controls.
+180|- [RNHostView](/versions/latest/sdk/ui/jetpack-compose/rnhostview)：A component that enables React Native views inside Jetpack Compose.
+184|- [Row](/versions/latest/sdk/ui/jetpack-compose/row)：Row component for placing children horizontally.
+188|- [SearchBar](/versions/latest/sdk/ui/jetpack-compose/searchbar)：SearchBar component for search input functionality.
+192|- [SegmentedButton](/versions/latest/sdk/ui/jetpack-compose/segmentedbutton)：Segmented Button components for single or multi-choice selection.
+196|- [Shape](/versions/latest/sdk/ui/jetpack-compose/shape)：Shape component for drawing geometric shapes.
+200|- [Slider](/versions/latest/sdk/ui/jetpack-compose/slider)：Slider component for selecting values from a range.
+204|- [Snackbar](/versions/latest/sdk/ui/jetpack-compose/snackbar)：A brief notification that appears at the bottom of the screen to provide feedback without interrupting the user.
+208|- [Spacer](/versions/latest/sdk/ui/jetpack-compose/spacer)：Spacer component for adding flexible space between elements.
+212|- [Surface](/versions/latest/sdk/ui/jetpack-compose/surface)：Surface component for styled content containers.
+216|- [Switch](/versions/latest/sdk/ui/jetpack-compose/switch)：Switch component for toggle controls.
+220|- [Text](/versions/latest/sdk/ui/jetpack-compose/text)：Text component for displaying styled text.
+224|- [TextField](/versions/latest/sdk/ui/jetpack-compose/textfield)：TextField components for native Material3 text input.
+228|- [ToggleButton](/versions/latest/sdk/ui/jetpack-compose/togglebutton)：ToggleButton components for displaying native Material3 toggle buttons.
+232|- [Tooltip](/versions/latest/sdk/ui/jetpack-compose/tooltip)：Tooltip components for displaying contextual information on long-press.
+234|- [useNativeState](/versions/latest/sdk/ui/jetpack-compose/usenativestate)：A React hook that creates observable state shared between JavaScript and native Jetpack Compose views.
+236|### SwiftUI
+238|- [AccessoryWidgetBackground](/versions/latest/sdk/ui/swift-ui/accessorywidgetbackground)：Adaptive background view that provides a standard appearance based on the widget's environment.
+242|- [Alert](/versions/latest/sdk/ui/swift-ui/alert)：Alert component for presenting native iOS alert dialogs.
+246|- [BottomSheet](/versions/latest/sdk/ui/swift-ui/bottomsheet)：BottomSheet component that presents content from the bottom of the screen.
+250|- [Button](/versions/latest/sdk/ui/swift-ui/button)：Button component for displaying native buttons.
+254|- [ColorPicker](/versions/latest/sdk/ui/swift-ui/colorpicker)：ColorPicker component for selecting colors.
+258|- [ConfirmationDialog](/versions/latest/sdk/ui/swift-ui/confirmationdialog)：ConfirmationDialog component for presenting confirmation prompts.
+262|- [ContextMenu](/versions/latest/sdk/ui/swift-ui/contextmenu)：ContextMenu component for displaying context menus.
+266|- [ControlGroup](/versions/latest/sdk/ui/swift-ui/controlgroup)：ControlGroup component for grouping interactive controls.
+270|- [DatePicker](/versions/latest/sdk/ui/swift-ui/datepicker)：DatePicker component for selecting dates and times.
+274|- [DisclosureGroup](/versions/latest/sdk/ui/swift-ui/disclosuregroup)：DisclosureGroup component for displaying expandable content.
+278|- [Divider](/versions/latest/sdk/ui/swift-ui/divider)：Divider component for creating visual separators.
+282|- [Form](/versions/latest/sdk/ui/swift-ui/form)：Form component for collecting user input in a structured layout.
+286|- [Gauge](/versions/latest/sdk/ui/swift-ui/gauge)：Gauge component for displaying progress with visual indicators.
+288|- [Group](/versions/latest/sdk/ui/swift-ui/group)：Group component for grouping views without affecting layout.
+290|- [Host](/versions/latest/sdk/ui/swift-ui/host)：Host component that enables SwiftUI components in React Native.
+294|- [HStack](/versions/latest/sdk/ui/swift-ui/hstack)：HStack component for horizontal layouts.
+298|- [Image](/versions/latest/sdk/ui/swift-ui/image)：Image component for displaying SF Symbols.
+302|- [Label](/versions/latest/sdk/ui/swift-ui/label)：Label component for displaying text with an icon.
+304|- [LazyHStack](/versions/latest/sdk/ui/swift-ui/lazyhstack)：LazyHStack component for lazy horizontal layouts.
+306|- [LazyVStack](/versions/latest/sdk/ui/swift-ui/lazyvstack)：LazyVStack component for lazy vertical layouts.
+310|- [Link](/versions/latest/sdk/ui/swift-ui/link)：Link component for displaying clickable links.
+314|- [List](/versions/latest/sdk/ui/swift-ui/list)：List component for displaying scrollable lists of items.
+318|- [Menu](/versions/latest/sdk/ui/swift-ui/menu)：Menu component for displaying dropdown menus.
+320|- [Modifiers](/versions/latest/sdk/ui/swift-ui/modifiers)：View modifiers for customizing component appearance and behavior.
+322|- [Namespace](/versions/latest/sdk/ui/swift-ui/namespace)：A Namespace component that allows you create Namespaces in SwiftUI
+326|- [Overlay](/versions/latest/sdk/ui/swift-ui/overlay)：Overlay component for layering content on top of another view.
+330|- [Picker](/versions/latest/sdk/ui/swift-ui/picker)：Picker component for selecting options from a list.
+334|- [Popover](/versions/latest/sdk/ui/swift-ui/popover)：Popover component for displaying content in a floating overlay.
+338|- [ProgressView](/versions/latest/sdk/ui/swift-ui/progressview)：ProgressView component for displaying progress indicators.
+340|- [RNHostView](/versions/latest/sdk/ui/swift-ui/rnhostview)：A component that enables React Native views inside SwiftUI.
+344|- [ScrollView](/versions/latest/sdk/ui/swift-ui/scrollview)：ScrollView component for scrollable content.
+348|- [Section](/versions/latest/sdk/ui/swift-ui/section)：Section component for grouping content within lists and forms.
+352|- [SecureField](/versions/latest/sdk/ui/swift-ui/securefield)：SecureField component for password input.
+356|- [Slider](/versions/latest/sdk/ui/swift-ui/slider)：Slider component for selecting values from a range.
+360|- [Spacer](/versions/latest/sdk/ui/swift-ui/spacer)：Spacer component for flexible spacing.
+362|- [SwipeActions](/versions/latest/sdk/ui/swift-ui/swipeactions)：SwipeActions component for adding leading and trailing swipe actions to row content.
+366|- [TabView](/versions/latest/sdk/ui/swift-ui/tabview)：TabView component for paged or tabbed content.
+370|- [Text](/versions/latest/sdk/ui/swift-ui/text)：Text component for displaying styled text with support for nested texts.
+374|- [TextField](/versions/latest/sdk/ui/swift-ui/textfield)：TextField component for text input.
+378|- [Toggle](/versions/latest/sdk/ui/swift-ui/toggle)：Toggle component for displaying native toggles.
+380|- [useNativeState](/versions/latest/sdk/ui/swift-ui/usenativestate)：A React hook that creates observable state shared between JavaScript and native SwiftUI views.
+384|- [VStack](/versions/latest/sdk/ui/swift-ui/vstack)：VStack component for vertical layouts.
+388|- [ZStack](/versions/latest/sdk/ui/swift-ui/zstack)：ZStack component for overlapping layouts.
+390|### Drop-in replacements
+396|- [BottomSheet](/versions/latest/sdk/ui/drop-in-replacements/bottomsheet)：A bottom sheet compatible with @gorhom/bottom-sheet.
+402|- [DateTimePicker](/versions/latest/sdk/ui/drop-in-replacements/datetimepicker)：A date and time picker compatible with @react-native-community/datetimepicker.
+408|- [MaskedView](/versions/latest/sdk/ui/drop-in-replacements/maskedview)：A masked view compatible with @react-native-masked-view/masked-view.
+414|- [Menu](/versions/latest/sdk/ui/drop-in-replacements/menu)：A menu compatible with @react-native-menu/menu.
+420|- [PagerView](/versions/latest/sdk/ui/drop-in-replacements/pagerview)：A horizontally paged view compatible with react-native-pager-view.
+426|- [Picker](/versions/latest/sdk/ui/drop-in-replacements/picker)：A picker compatible with @react-native-picker/picker.
+432|- [SegmentedControl](/versions/latest/sdk/ui/drop-in-replacements/segmentedcontrol)：A segmented control compatible with @react-native-segmented-control/segmented-control.
+438|- [Slider](/versions/latest/sdk/ui/drop-in-replacements/slider)：A slider compatible with @react-native-community/slider.
+440|### Universal
+446|- [BottomSheet](/versions/latest/sdk/ui/universal/bottomsheet)：A modal sheet that slides up from the bottom of the screen.
+452|- [Button](/versions/latest/sdk/ui/universal/button)：A pressable button with multiple visual variants.
+458|- [Checkbox](/versions/latest/sdk/ui/universal/checkbox)：A toggle control that represents a checked or unchecked state.
+464|- [Collapsible](/versions/latest/sdk/ui/universal/collapsible)：A labelled tappable header that toggles visibility of its content.
+470|- [Column](/versions/latest/sdk/ui/universal/column)：A vertical layout container for universal @expo/ui components.
+476|- [FieldGroup](/versions/latest/sdk/ui/universal/fieldgroup)：A scrollable container of grouped settings-style rows.
+482|- [Host](/versions/latest/sdk/ui/universal/host)：A cross-platform Host component that wraps universal @expo/ui content.
+488|- [Icon](/versions/latest/sdk/ui/universal/icon)：A platform-native icon — SF Symbol on iOS, Material Symbol on Android.
+494|- [List](/versions/latest/sdk/ui/universal/list)：A virtualized vertical container of rows, paired with a tappable ListItem primitive.
+500|- [Picker](/versions/latest/sdk/ui/universal/picker)：A single-selection input with menu and wheel appearances.
+506|- [RNHostView](/versions/latest/sdk/ui/universal/rnhostview)：A cross-platform component for hosting React Native views inside @expo/ui views.
+512|- [Row](/versions/latest/sdk/ui/universal/row)：A horizontal layout container for universal @expo/ui components.
+518|- [ScrollView](/versions/latest/sdk/ui/universal/scrollview)：A scrollable container that supports vertical or horizontal scrolling.
+524|- [Slider](/versions/latest/sdk/ui/universal/slider)：A control for selecting a value from a continuous or stepped range.
+530|- [Spacer](/versions/latest/sdk/ui/universal/spacer)：A layout spacer that produces empty space between siblings.
+536|- [Switch](/versions/latest/sdk/ui/universal/switch)：A toggle control that switches between on and off states.
+542|- [Text](/versions/latest/sdk/ui/universal/text)：A component for displaying styled text content.
+548|- [TextInput](/versions/latest/sdk/ui/universal/textinput)：A text input backed by native SwiftUI and Jetpack Compose components, with a React Native-compatible API.
+550|## Common questions
+552|<details><summary>Can I use flexbox or other styles in Expo UI components?</summary>
+554|Flexbox styles apply to the `Host` component itself. Once you are inside the native context, [`Yoga`](https://www.yogalayout.dev/) is not available. Define layouts with `Row` and `Column` on Android, or `HStack` and `VStack` on iOS.
+556|</details>
+558|<details><summary>What's the `Host` component?</summary>
+562|</details>
+564|<details><summary>How is Expo UI different from libraries like `react-native-paper` or `react-native-elements`?</summary>
+566|Expo UI is not "yet another" UI library and not an opinionated design kit. Instead, it's a primitives library. It exposes native Jetpack Compose and SwiftUI components directly to JavaScript, rather than re-implementing or simulating UI in JavaScript.
+568|</details>
+570|<details><summary>Can I use `@expo/ui/swift-ui` on Android or web?</summary>
+572|No. `@expo/ui/swift-ui` renders SwiftUI views, which exist only on Apple platforms. Use [`@expo/ui/jetpack-compose`](/versions/latest/sdk/ui/jetpack-compose) for Android. Use the [universal components](/versions/latest/sdk/ui/universal) when you want one component tree for Android, iOS, and web.
+574|</details>
+576|<details><summary>Can I use React Native components inside SwiftUI components?</summary>
+578|Yes, you can place React Native components as JSX children of Expo UI components. Expo UI automatically creates a [`UIViewRepresentable`](https://developer.apple.com/documentation/swiftui/uiviewrepresentable) wrapper for you.
+579|However, keep in mind that the SwiftUI layout system works differently from UIKit and has some limitations. According to Apple's documentation:
+581|:::warning
+582|SwiftUI fully controls the layout of the UIKit view's [`center`](https://developer.apple.com/documentation/UIKit/UIView/center), [`bounds`](https://developer.apple.com/documentation/UIKit/UIView/bounds), [`frame`](https://developer.apple.com/documentation/UIKit/UIView/frame), and [`transform`](https://developer.apple.com/documentation/UIKit/UIView/transform) properties. Don't directly set these layout-related properties on the view managed by a [`UIViewRepresentable`](https://developer.apple.com/documentation/swiftui/uiviewrepresentable) instance from your own code because that conflicts with SwiftUI and results in undefined behavior.
+583|:::
+585|Also note that once you render React Native components, you're leaving the SwiftUI context. To add Expo UI components again, reintroduce a `Host` wrapper.
+587|Keep SwiftUI layouts self-contained. Interop is possible, but it works best when boundaries are clearly defined.
+589|</details>
+591|<details><summary>I'm a Jetpack Compose or SwiftUI developer. Why should I learn Expo UI?</summary>
+593|React's promise of _"learn once, write anywhere"_ now extends to Jetpack Compose and SwiftUI. You can apply your existing knowledge to build apps that run in the React Native ecosystem. The same app can extend to the web through [DOM components](/guides/dom-components), and add 2D rendering with [`react-native-skia`](https://shopify.github.io/react-native-skia/) or 3D rendering with [`react-native-webgpu`](https://github.com/wcandillon/react-native-webgpu). Different parts of your app can use different approaches, because the integration works at the component level.
+595|</details>
+597|## Additional resources
+599|- [Expo UI example](https://github.com/expo/expo/tree/main/apps/native-component-list/src/screens/UI)：The latest Expo UI examples.
+601|- [Hot Chocolate app example](https://github.com/expo/hot-chocolate)：An example app replicating the YVR Hot Chocolate Fest app with Expo UI.
+603|- [Expo UI multiplatform demo](https://github.com/react-native-tvos/ExpoUITV)：A project demonstrating the production-ready Expo UI package available in SDK 56 and later. The project works on both TV (Android TV, Apple TV) and mobile (Android, iOS). Demo screens include most of the available components for both Jetpack Compose and SwiftUI.

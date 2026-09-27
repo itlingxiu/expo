@@ -1,0 +1,213 @@
+1|---
+2|title: SQLite
+3|description: A library that provides access to a database that can be queried through a SQLite API.
+4|packageName: expo-sqlite
+5|---
+7|# SQLite
+9|> 支持平台：Android、iOS、macOS、tvOS、Web、Expo Go。
+22|npx expo install expo-sqlite
+27|yarn expo install expo-sqlite
+32|pnpm expo install expo-sqlite
+37|bun expo install expo-sqlite
+49|{
+50|  "expo": {
+51|    "plugins": [
+52|      [
+53|        "expo-sqlite",
+54|        {
+55|          "enableFTS": true,
+56|          "useSQLCipher": true,
+57|          "android": {
+58|            // Override the shared configuration for Android
+59|            "enableFTS": false,
+60|            "useSQLCipher": false
+61|          },
+62|          "ios": {
+63|            // You can also override the shared configurations for iOS
+64|            "customBuildFlags": "-DSQLITE_ENABLE_DBSTAT_VTAB=1 -DSQLITE_ENABLE_SNAPSHOT=1"
+65|          }
+66|        }
+67|      ]
+68|    ]
+69|  }
+70|}
+89|diff --git a/metro.config.js b/metro.config.js
+90|index 07c9fce..c3a9b0e 100644
+91|--- a/metro.config.js
+92|+++ b/metro.config.js
+93|@@ -4,4 +4,16 @@ const { getDefaultConfig } = require('expo/metro-config');
+94| /** @type {import('expo/metro-config').MetroConfig} */
+95| const config = getDefaultConfig(__dirname);
+97|+// Add wasm asset support
+98|+config.resolver.assetExts.push('wasm');
+99|+
+100|+// Add COEP and COOP headers to support SharedArrayBuffer
+101|+config.server.enhanceMiddleware = (middleware) => {
+102|+  return (req, res, next) => {
+103|+    res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless');
+104|+    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+105|+    middleware(req, res, next);
+106|+  };
+107|+};
+108|+
+109| module.exports = config;
+117|{
+118|  "expo": {
+119|    "plugins": [
+120|      [
+121|        "expo-router",
+122|        {
+123|          "headers": {
+124|            "Cross-Origin-Embedder-Policy": "credentialless",
+125|            "Cross-Origin-Opener-Policy": "same-origin"
+126|          }
+127|        }
+128|      ]
+129|    ]
+130|  }
+131|}
+139|import * as SQLite from 'expo-sqlite';
+145|const db = await SQLite.openDatabaseAsync('databaseName');
+147|// `execAsync()` is useful for bulk queries when you want to execute altogether.
+148|// Note that `execAsync()` does not escape parameters and may lead to SQL injection.
+149|await db.execAsync(`
+150|PRAGMA journal_mode = WAL;
+151|CREATE TABLE IF NOT EXISTS test (id INTEGER PRIMARY KEY NOT NULL, value TEXT NOT NULL, intValue INTEGER);
+152|INSERT INTO test (value, intValue) VALUES ('test1', 123);
+153|INSERT INTO test (value, intValue) VALUES ('test2', 456);
+154|INSERT INTO test (value, intValue) VALUES ('test3', 789);
+180|### Prepared statements
+182|Prepared statements allow you to compile your SQL query once and execute it multiple times with different parameters. They automatically escape input parameters to defend against SQL injection attacks, and are recommended for queries that include user input. You can get a prepared statement by calling [`prepareAsync()`](#prepareasyncsource) or [`prepareSync()`](#preparesyncsource) method on a database instance. The prepared statement can fulfill CRUD operations by calling [`executeAsync()`](#executeasyncparams) or [`executeSync()`](#executesyncparams) method.
+184|> **Note:** Remember to call [`finalizeAsync()`](#finalizeasync) or [`finalizeSync()`](#finalizesync) method to release the prepared statement after you finish using the statement. `try-finally` block is recommended to ensure the prepared statement is finalized.
+234|### Tagged template literals API
+236|For convenience and improved developer experience, `expo-sqlite` provides Bun-inspired tagged template literals API through the `db.sql` property. This API automatically escapes parameters to prevent SQL injection attacks and provides automatic type inference based on the query type.
+274|### `useSQLiteContext()` hook
+351|    await db.runAsync('INSERT INTO todos (value, intValue) VALUES (?, ?)', 'hello', 1);
+352|    await db.runAsync('INSERT INTO todos (value, intValue) VALUES (?, ?)', 'world', 2);
+353|    currentDbVersion = 1;
+354|  }
+355|  // if (currentDbVersion === 1) {
+356|  //   Add more migrations
+357|  // }
+358|  await db.execAsync(`PRAGMA user_version = ${DATABASE_VERSION}`);
+359|}
+361|const styles = StyleSheet.create({
+362|  // Your styles...
+363|});
+371|import { SQLiteProvider, useSQLiteContext } from 'expo-sqlite';
+372|import { Suspense } from 'react';
+373|import { View, Text, StyleSheet } from 'react-native';
+375|export default function App() {
+376|  return (
+377|    <View style={styles.container}>
+378|      <Suspense fallback={<Text>Loading...</Text>}>
+379|        <SQLiteProvider databaseName="test.db" onInit={migrateDbIfNeeded} useSuspense>
+380|          <Header />
+381|          <Content />
+382|        </SQLiteProvider>
+383|      </Suspense>
+384|    </View>
+385|  );
+386|}
+392|const db = await SQLite.openDatabaseAsync('databaseName');
+394|await db.withTransactionAsync(async () => {
+395|  const result = await db.getFirstAsync('SELECT COUNT(*) FROM USERS');
+396|  console.log('Count:', result['COUNT(*)']);
+397|});
+403|Promise.all([
+404|  // 1. A new transaction begins
+405|  db.withTransactionAsync(async () => {
+406|    // 2. The value "first" is inserted into the test table and we wait 2
+407|    //    seconds
+408|    await db.execAsync('INSERT INTO test (data) VALUES ("first")');
+409|    await sleep(2000);
+411|    // 4. Two seconds in, we read the latest data from the table
+412|    const row = await db.getFirstAsync<{ data: string }>('SELECT data FROM test');
+414|    // ❌ The data in the table will be "second" and this expectation will fail.
+415|    //    Additionally, this expectation will throw an error and roll back the
+416|    //    transaction, including the `UPDATE` query below since it ran within
+417|    //    the transaction.
+418|    expect(row.data).toBe('first');
+419|  }),
+420|  // 3. One second in, the data in the test table is updated to be "second".
+421|  //    This `UPDATE` query runs in the transaction even though its code is
+422|  //    outside of it because the transaction happens to be active at the time
+423|  //    this query runs.
+424|  sleep(1000).then(async () => db.execAsync('UPDATE test SET data = "second"')),
+425|]);
+433|const db = await SQLite.openDatabaseAsync('databaseName');
+434|await db.execAsync('PRAGMA journal_mode = WAL');
+435|await db.execAsync('PRAGMA foreign_keys = ON');
+447|import { SQLiteProvider, useSQLiteContext } from 'expo-sqlite';
+448|import { View, Text, StyleSheet } from 'react-native';
+450|export default function App() {
+451|  return (
+452|    <View style={styles.container}>
+453|      <SQLiteProvider databaseName="test.db" assetSource={{ assetId: require('./assets/test.db') }}>
+454|        <Header />
+455|        <Content />
+456|      </SQLiteProvider>
+457|    </View>
+458|  );
+459|}
+481|2. Use [`Paths.appleSharedContainers`](/versions/latest/sdk/filesystem#applesharedcontainers) from the [`expo-file-system`](/versions/latest/sdk/filesystem) library to retrieve the path to the shared container:
+483|   ```tsx
+484|import { SQLiteProvider, defaultDatabaseDirectory } from 'expo-sqlite';
+485|import { Paths } from 'expo-file-system';
+486|import { useMemo } from 'react';
+487|import { Platform, View } from 'react-native';
+489|export default function App() {
+490|  const dbDirectory = useMemo(() => {
+491|    if (Platform.OS === 'ios') {
+492|      return Object.values(Paths.appleSharedContainers)?.[0]?.uri;
+493|      // or `Paths.appleSharedContainers['group.com.myapp']?.uri` to choose specific container
+494|    }
+495|    return defaultDatabaseDirectory;
+496|  }, []);
+498|  return (
+499|    <View style={styles.container}>
+500|      <SQLiteProvider databaseName="test.db" directory={dbDirectory}>
+501|        <Header />
+502|        <Content />
+503|      </SQLiteProvider>
+504|    </View>
+505|  );
+506|}
+514|await db.execAsync(`
+515|DROP TABLE IF EXISTS blobs;
+516|CREATE TABLE IF NOT EXISTS blobs (id INTEGER PRIMARY KEY NOT NULL, data BLOB);
+526|### Browse an on-device database
+528|The `expo-sqlite` library includes a built-in DevTools inspector plugin that is automatically enabled in development and requires no extra setup. It lets you browse tables, view and edit rows, run SQL queries, and export databases directly from your browser. To open it, press <kbd>Shift</kbd> + <kbd>M</kbd> in the Expo CLI terminal to open the dev tools menu, and then select **Open expo-sqlite** to launch the inspector.
+530|![SQLite inspector showing a data browser with table rows, edit/delete actions, and a sidebar listing tables](/static/images/sdk/sqlite/inspector.webp)
+532|Alternatively, you can also use the [`drizzle-studio-expo` dev tools plugin](https://github.com/drizzle-team/drizzle-studio-expo) to launch [Drizzle Studio](https://orm.drizzle.team/drizzle-studio/overview), connected to a database in your app, directly from Expo CLI. This plugin can be used with any `expo-sqlite` configuration and does not require [Drizzle ORM](#drizzle-orm). [Learn how to install and use the plugin](https://github.com/drizzle-team/drizzle-studio-expo).
+534|### Key-value storage
+536|The `expo-sqlite` library provides [`Storage`](#sqlitestorage) as a drop-in replacement for the [`@react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage) library. This key-value store is backed by SQLite. If your project already uses `expo-sqlite`, you can leverage `expo-sqlite/kv-store` without needing to add another dependency.
+538|[`Storage`](#sqlitestorage) provides the same API as `@react-native-async-storage/async-storage`:
+550|A key benefit of using `expo-sqlite/kv-store` is the addition of synchronous APIs for added convenience:
+560|If you're currently using `@react-native-async-storage/async-storage` in your project, switching to `expo-sqlite/kv-store` is as simple as changing the import statement:
+567|### The `localStorage` API
+569|The `expo-sqlite/localStorage/install` module provides a drop-in implementation for the [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) API. If you're already familiar with this API from the web, or you would like to be able to share storage code between web and other platforms, this may be useful. To use it, you just need to import the `expo-sqlite/localStorage/install` module:
+571|> **Note:** `import 'expo-sqlite/localStorage/install';` is a no-op on web and will be excluded from the production JS bundle.
+580|## Security
+582|SQL injections are a class of vulnerabilities where attackers trick your app into executing user input as SQL code. You must escape all user input passed to SQLite to defend against SQL injections. [Prepared statements](#prepared-statements) are an effective defense against this problem. They explicitly separate a SQL query's logic from its input parameters, and SQLite automatically escapes inputs when executing prepared statements.
+584|## Third-party library integrations
+586|The `expo-sqlite` library is designed to be a solid SQLite foundation. It enables broader integrations with third-party libraries for more advanced higher-level features. Here are some of the libraries that you can use with `expo-sqlite`.
+588|### Drizzle ORM
+590|[Drizzle](https://orm.drizzle.team/) is a ["headless TypeScript ORM with a head"](https://orm.drizzle.team/docs/overview). It runs on Node.js, Bun, Deno, and React Native. It also has a CLI companion called [`drizzle-kit`](https://orm.drizzle.team/kit-docs/overview) for generating SQL migrations.
+592|Check out the [Drizzle ORM documentation](https://orm.drizzle.team/) and the [`expo-sqlite` integration guide](https://orm.drizzle.team/docs/get-started/expo-new) for more details.
+594|### Knex.js
+596|[Knex.js](https://knexjs.org/) is a SQL query builder that is ["flexible, portable, and fun to use!"](https://github.com/knex/knex)
+598|Check out the [`expo-sqlite` integration guide](https://github.com/expo/knex-expo-sqlite-dialect) for more details.
+600|## SQLCipher
+602|> **Note:** SQLCipher is not supported on [Expo Go](https://expo.dev/go).
+604|[SQLCipher](https://www.zetetic.net/sqlcipher/) is a fork of SQLite that adds encryption and authentication to the database. The `expo-sqlite` library supports SQLCipher for Android, iOS, and macOS. To use SQLCipher, you need to add the `useSQLCipher` config to your **app.json** as shown in the [Configuration in app config](#configuration-in-app-config) section and run `npx expo prebuild`.
+606|Right after you open a database, you need to set a password for the database using the `PRAGMA key = 'password'` statement.
+613|## API
+615|### Cheatsheet for the common API
+617|The following table summarizes the common API for [`SQLiteDatabase`](#sqlitedatabase) and [`SQLiteStatement`](#sqlitestatement) classes:
+619|| [`SQLiteDatabase`](#sqlitedatabase) methods      | [`SQLiteStatement`](#sqlitestatement) methods                                 | Description                                                                                                                                                            | Use case                                                                                                                                                                                   |
+620|| ------------------------------------------------ | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+621|| [`runAsync()`](#runasyncsource-params)           | [`executeAsync()`](#executeasyncparams)                                       | Executes a SQL query, returning information on the changes made.                                                                                                       | Ideal for SQL write operations such as `INSERT`, `UPDATE`, `DELETE`.                                                                                                                       |
+622|| [`getFirstAsync()`](#getfirstasyncsource-params) | [`executeAsync()`](#executeasyncparams) + [`getFirstAsync()`](#getfirstasync) | Retrieves the first row from the query result.                                                                                                                         | Suitable for fetching a single row from the database. For example: `getFirstAsync('SELECT * FROM Users WHERE id = ?', userId)`.                                                            |
+623|| [`getAllAsync()`](#getallasyncsource-params)     | [`executeAsync()`](#executeasyncparams) + [`getFirstAsync()`](#getallasync)   | Fetches all query results at once.                                                                                                                                     | Best suited for scenarios with smaller result sets, such as queries with a LIMIT clause, like `SELECT * FROM Table LIMIT 100`, where you intend to retrieve all results in a single batch. |
+624|| [`getEachAsync()`](#geteachasyncsource-params)   | [`executeAsync()`](#executeasyncparams) + `for-await-of` async iterator       | Provides an iterator for result set traversal. This method fetches one row at a time from the database, potentially reducing memory usage compared to `getAllAsync()`. | Recommended for handling large result sets incrementally, such as with infinite scrolling implementations.                                                                                 |

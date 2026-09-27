@@ -1,0 +1,34 @@
+﻿
+
+HelpUri            : 
+FileVersionInfo    : File:             C:\Windows\system32\node
+                     InternalName:     
+                     OriginalFilename: 
+                     FileVersion:      
+                     FileDescription:  
+                     Product:          
+                     ProductVersion:   
+                     Debug:            False
+                     Patched:          False
+                     PreRelease:       False
+                     PrivateBuild:     False
+                     SpecialBuild:     False
+                     Language:         
+                     
+Path               : C:\Windows\system32\node
+Extension          : 
+Definition         : C:\Windows\system32\node
+Source             : C:\Windows\system32\node
+Version            : 0.0.0.0
+Visibility         : Public
+OutputType         : {System.String}
+Name               : node
+CommandType        : Application
+ModuleName         : 
+Module             : 
+RemotingCapability : PowerShell
+Parameters         : 
+ParameterSets      : 
+
+
+

@@ -1,0 +1,6 @@
+submit/android
+submit/android-manual
+submit/eas-json
+submit/ios
+submit/ios-manual
+submit/testflight

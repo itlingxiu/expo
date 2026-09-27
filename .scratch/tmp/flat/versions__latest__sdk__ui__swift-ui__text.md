@@ -1,0 +1,345 @@
+---
+title: Text 组件参考
+description: A SwiftUI Text component for displaying styled text with support for nested texts.
+---
+
+# Text 组件参考
+
+> 支持平台：iOS、tvOS、Expo Go。
+
+> **info** For cross-platform usage, see the universal [`Text`](/versions/latest/sdk/ui/universal/text) — it renders the appropriate native component per platform.
+
+Expo UI Text matches the official SwiftUI [Text API](https://developer.apple.com/documentation/swiftui/text).
+
+![Text rendered with different font sizes, weights, and a hierarchical secondary style](/static/images/expo-ui/text/ios-light.webp)
+
+## Installation
+
+:::tabs
+:::tab npm
+```sh
+npx expo install @expo/ui
+```
+:::
+:::tab yarn
+```sh
+yarn expo install @expo/ui
+```
+:::
+:::tab pnpm
+```sh
+pnpm expo install @expo/ui
+```
+:::
+:::tab bun
+```sh
+bun expo install @expo/ui
+```
+:::
+:::
+
+## Usage
+
+### Basic text
+
+![The words Hello world in the default system font](/static/images/expo-ui/examples/text-basic-ios-light.webp)
+
+```tsx BasicTextExample.tsx
+import { Host, Text } from '@expo/ui/swift-ui';
+
+export default function BasicTextExample() {
+  return (
+    <Host style={{ flex: 1 }}>
+      <Text>Hello world</Text>
+    </Host>
+  );
+}
+```
+
+### Text with modifiers
+
+Use modifiers to style the entire text.
+
+![The words Large Bold Blue Text rendered in a large bold blue font](/static/images/expo-ui/examples/text-styled-ios-light.webp)
+
+```tsx StyledTextExample.tsx
+import { Host, Text } from '@expo/ui/swift-ui';
+import { font, foregroundStyle } from '@expo/ui/swift-ui/modifiers';
+
+export default function StyledTextExample() {
+  return (
+    <Host style={{ flex: 1 }}>
+      <Text
+        modifiers={[
+          font({ size: 24, weight: 'bold' }),
+          foregroundStyle('blue'),
+        ]}>
+        Large Bold Blue Text
+      </Text>
+    </Host>
+  );
+}
+```
+
+### Nested text (per-segment styling)
+
+Nest `Text` components to style individual segments differently. This is useful for inline formatting, such as bold or colored words within a sentence.
+
+> **Note:** Nested text uses SwiftUI's [Text concatenation](https://developer.apple.com/documentation/swiftui/text), so only modifiers that return `Text` (such as `bold`, `italic`, `font`, `foregroundColor`, and `foregroundStyle` with color) will apply to nested segments.
+
+![The sentence Hello world! where the word world is bold and red](/static/images/expo-ui/examples/text-nested-ios-light.webp)
+
+```tsx NestedTextExample.tsx
+import { Host, Text } from '@expo/ui/swift-ui';
+import {
+  bold,
+  italic,
+  foregroundStyle,
+} from '@expo/ui/swift-ui/modifiers';
+
+export default function NestedTextExample() {
+  return (
+    <Host style={{ flex: 1 }}>
+      <Text>
+        Hello{' '}
+        <Text modifiers={[bold(), foregroundStyle('red')]}>
+          world
+        </Text>
+        !
+      </Text>
+    </Host>
+  );
+}
+```
+
+### Mixed inline styles
+
+Combine multiple styled segments for rich text formatting.
+
+![A sentence where the word bold is bold, italic is italic, and colored is orange](/static/images/expo-ui/examples/text-mixed-styles-ios-light.webp)
+
+```tsx MixedStylesExample.tsx
+import { Host, Text } from '@expo/ui/swift-ui';
+import {
+  bold,
+  italic,
+  foregroundStyle,
+  font,
+} from '@expo/ui/swift-ui/modifiers';
+
+export default function MixedStylesExample() {
+  return (
+    <Host matchContents>
+      <Text>
+        This is <Text modifiers={[bold()]}>bold</Text>,{' '}
+        <Text modifiers={[italic()]}>italic</Text>, and{' '}
+        <Text modifiers={[foregroundStyle('orange')]}>colored</Text>{' '}
+        text.
+      </Text>
+    </Host>
+  );
+}
+```
+
+### Font weights
+
+Use the `font` modifier to apply different font weights.
+
+![Eight stacked lines showing the weights from Ultra Light through Black](/static/images/expo-ui/examples/text-font-weights-ios-light.webp)
+
+```tsx FontWeightsExample.tsx
+import { Host, Text, VStack } from '@expo/ui/swift-ui';
+import { font } from '@expo/ui/swift-ui/modifiers';
+
+export default function FontWeightsExample() {
+  return (
+    <Host style={{ flex: 1 }}>
+      <VStack spacing={4}>
+        <Text modifiers={[font({ weight: 'ultraLight' })]}>
+          Ultra Light
+        </Text>
+        <Text modifiers={[font({ weight: 'light' })]}>Light</Text>
+        <Text modifiers={[font({ weight: 'regular' })]}>
+          Regular
+        </Text>
+        <Text modifiers={[font({ weight: 'medium' })]}>Medium</Text>
+        <Text modifiers={[font({ weight: 'semibold' })]}>
+          Semibold
+        </Text>
+        <Text modifiers={[font({ weight: 'bold' })]}>Bold</Text>
+        <Text modifiers={[font({ weight: 'heavy' })]}>Heavy</Text>
+        <Text modifiers={[font({ weight: 'black' })]}>Black</Text>
+      </VStack>
+    </Host>
+  );
+}
+```
+
+### Font designs
+
+Use the `font` modifier to apply different font designs.
+
+![Four stacked lines showing the default, rounded, serif, and monospaced designs](/static/images/expo-ui/examples/text-font-designs-ios-light.webp)
+
+```tsx FontDesignsExample.tsx
+import { Host, Text, VStack } from '@expo/ui/swift-ui';
+import { font } from '@expo/ui/swift-ui/modifiers';
+
+export default function FontDesignsExample() {
+  return (
+    <Host style={{ flex: 1 }}>
+      <VStack spacing={4}>
+        <Text modifiers={[font({ design: 'default', size: 18 })]}>
+          Default Design
+        </Text>
+        <Text modifiers={[font({ design: 'rounded', size: 18 })]}>
+          Rounded Design
+        </Text>
+        <Text modifiers={[font({ design: 'serif', size: 18 })]}>
+          Serif Design
+        </Text>
+        <Text
+          modifiers={[font({ design: 'monospaced', size: 18 })]}>
+          Monospaced Design
+        </Text>
+      </VStack>
+    </Host>
+  );
+}
+```
+
+### Custom fonts
+
+Use the `font` modifier with a `family` parameter to use custom fonts. You can load custom fonts using [`expo-font`](/versions/latest/sdk/font) library.
+
+![Two lines of text, Inter Bold above Inter Regular.](/static/images/expo-ui/examples/text-custom-font-ios-light.webp)
+
+```tsx CustomFontExample.tsx
+import { Host, Text, VStack } from '@expo/ui/swift-ui';
+import { font } from '@expo/ui/swift-ui/modifiers';
+
+export default function CustomFontExample() {
+  return (
+    <Host matchContents style={{ alignSelf: 'center' }}>
+      <VStack spacing={4}>
+        <Text
+          modifiers={[font({ family: 'Inter-Bold', size: 18 })]}>
+          Inter Bold
+        </Text>
+        <Text
+          modifiers={[font({ family: 'Inter-Regular', size: 18 })]}>
+          Inter Regular
+        </Text>
+      </VStack>
+    </Host>
+  );
+}
+```
+
+### Text with line limit
+
+Use the `lineLimit` modifier to truncate text after a certain number of lines.
+
+![A long paragraph cut off after two lines with a trailing ellipsis](/static/images/expo-ui/examples/text-line-limit-ios-light.webp)
+
+```tsx LineLimitExample.tsx
+import { Host, Text } from '@expo/ui/swift-ui';
+import { lineLimit } from '@expo/ui/swift-ui/modifiers';
+
+export default function LineLimitExample() {
+  const longText =
+    'This is a very long text that will be truncated after two lines. '.repeat(
+      5
+    );
+
+  return (
+    <Host style={{ flex: 1 }}>
+      <Text modifiers={[lineLimit(2)]}>{longText}</Text>
+    </Host>
+  );
+}
+```
+
+### Markdown
+
+Use the `markdownEnabled` property to enable Markdown formatting for the text content.
+
+![Five lines showing bold, italic, strikethrough, and monospaced text, and a blue link](/static/images/expo-ui/examples/text-markdown-ios-light.webp)
+
+```tsx MarkdownTextExample.tsx
+import { Host, Text, VStack } from '@expo/ui/swift-ui';
+
+export default function MarkdownTextExample() {
+  return (
+    <Host style={{ flex: 1 }}>
+      <VStack spacing={4}>
+        <Text markdownEnabled>Regular text.</Text>
+        <Text markdownEnabled>
+          This is **bold text**, *italic text* and ***text in both
+          bold and italic***.
+        </Text>
+        <Text markdownEnabled>~~Strikethrough text~~</Text>
+        <Text markdownEnabled>`This is monospaced text`</Text>
+        <Text markdownEnabled>
+          Visit the [Expo
+          Docs](/versions/latest/sdk/ui) to
+          learn more about Expo UI
+        </Text>
+      </VStack>
+    </Host>
+  );
+}
+```
+
+### Auto-updating date
+
+Use the `date` and `dateStyle` props to display a date that automatically updates as time passes. This is especially useful in widgets and Live Activities.
+
+![A countdown reading 4 minutes and 53 seconds](/static/images/expo-ui/examples/text-date-ios-light.webp)
+
+```tsx DateTextExample.tsx
+import { Host, Text } from '@expo/ui/swift-ui';
+
+export default function DateTextExample() {
+  return (
+    <Host style={{ flex: 1 }}>
+      <Text
+        date={new Date(Date.now() + 300000)}
+        dateStyle="timer"
+      />
+    </Host>
+  );
+}
+```
+
+### Timer interval
+
+Use `timerInterval` to display a live countdown or count-up timer. This requires iOS/tvOS 16+.
+
+![A countdown reading 9 minutes and 54 seconds](/static/images/expo-ui/examples/text-timer-interval-ios-light.webp)
+
+```tsx TimerIntervalExample.tsx
+import { Host, Text } from '@expo/ui/swift-ui';
+
+export default function TimerIntervalExample() {
+  return (
+    <Host style={{ flex: 1 }}>
+      <Text
+        timerInterval={{
+          lower: new Date(),
+          upper: new Date(Date.now() + 600000),
+        }}
+        countsDown
+      />
+    </Host>
+  );
+}
+```
+
+> **Note:** `timerInterval`, `countsDown`, and `pauseTime` require iOS 16.0+ / tvOS 16.0+. On older versions, the timer interval will not render.
+
+## API
+
+```tsx
+import { Text } from '@expo/ui/swift-ui';
+```

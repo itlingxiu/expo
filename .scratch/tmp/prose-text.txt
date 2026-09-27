@@ -1,0 +1,112 @@
+   1 ---
+   2 title: Text 组件参考
+   3 description: A SwiftUI Text component for displaying styled text with support for nested texts.
+   4 ---
+   5 
+   6 # Text 组件参考
+   7 
+   8 > 支持平台：iOS、tvOS、Expo Go。
+   9 
+  10 > **info** For cross-platform usage, see the universal [`Text`](/versions/latest/sdk/ui/universal/text) — it renders the appropriate native component per platform.
+  11 
+  12 Expo UI Text matches the official SwiftUI [Text API](https://developer.apple.com/documentation/swiftui/text).
+  13 
+  14 ![Text rendered with different font sizes, weights, and a hierarchical secondary style](/static/images/expo-ui/text/ios-light.webp)
+  15 
+  16 ## Installation
+  17 
+  18 :::tabs
+  19 :::tab npm
+  23 :::
+  24 :::tab yarn
+  28 :::
+  29 :::tab pnpm
+  33 :::
+  34 :::tab bun
+  38 :::
+  39 :::
+  40 
+  41 ## Usage
+  42 
+  43 ### Basic text
+  44 
+  45 ![The words Hello world in the default system font](/static/images/expo-ui/examples/text-basic-ios-light.webp)
+  46 
+  58 
+  59 ### Text with modifiers
+  60 
+  61 Use modifiers to style the entire text.
+  62 
+  63 ![The words Large Bold Blue Text rendered in a large bold blue font](/static/images/expo-ui/examples/text-styled-ios-light.webp)
+  64 
+  83 
+  84 ### Nested text (per-segment styling)
+  85 
+  86 Nest `Text` components to style individual segments differently. This is useful for inline formatting, such as bold or colored words within a sentence.
+  87 
+  88 > **Note:** Nested text uses SwiftUI's [Text concatenation](https://developer.apple.com/documentation/swiftui/text), so only modifiers that return `Text` (such as `bold`, `italic`, `font`, `foregroundColor`, and `foregroundStyle` with color) will apply to nested segments.
+  89 
+  90 ![The sentence Hello world! where the word world is bold and red](/static/images/expo-ui/examples/text-nested-ios-light.webp)
+  91 
+ 114 
+ 115 ### Mixed inline styles
+ 116 
+ 117 Combine multiple styled segments for rich text formatting.
+ 118 
+ 119 ![A sentence where the word bold is bold, italic is italic, and colored is orange](/static/images/expo-ui/examples/text-mixed-styles-ios-light.webp)
+ 120 
+ 143 
+ 144 ### Font weights
+ 145 
+ 146 Use the `font` modifier to apply different font weights.
+ 147 
+ 148 ![Eight stacked lines showing the weights from Ultra Light through Black](/static/images/expo-ui/examples/text-font-weights-ios-light.webp)
+ 149 
+ 177 
+ 178 ### Font designs
+ 179 
+ 180 Use the `font` modifier to apply different font designs.
+ 181 
+ 182 ![Four stacked lines showing the default, rounded, serif, and monospaced designs](/static/images/expo-ui/examples/text-font-designs-ios-light.webp)
+ 183 
+ 210 
+ 211 ### Custom fonts
+ 212 
+ 213 Use the `font` modifier with a `family` parameter to use custom fonts. You can load custom fonts using [`expo-font`](/versions/latest/sdk/font) library.
+ 214 
+ 215 ![Two lines of text, Inter Bold above Inter Regular.](/static/images/expo-ui/examples/text-custom-font-ios-light.webp)
+ 216 
+ 238 
+ 239 ### Text with line limit
+ 240 
+ 241 Use the `lineLimit` modifier to truncate text after a certain number of lines.
+ 242 
+ 243 ![A long paragraph cut off after two lines with a trailing ellipsis](/static/images/expo-ui/examples/text-line-limit-ios-light.webp)
+ 244 
+ 262 
+ 263 ### Markdown
+ 264 
+ 265 Use the `markdownEnabled` property to enable Markdown formatting for the text content.
+ 266 
+ 267 ![Five lines showing bold, italic, strikethrough, and monospaced text, and a blue link](/static/images/expo-ui/examples/text-markdown-ios-light.webp)
+ 268 
+ 293 
+ 294 ### Auto-updating date
+ 295 
+ 296 Use the `date` and `dateStyle` props to display a date that automatically updates as time passes. This is especially useful in widgets and Live Activities.
+ 297 
+ 298 ![A countdown reading 4 minutes and 53 seconds](/static/images/expo-ui/examples/text-date-ios-light.webp)
+ 299 
+ 314 
+ 315 ### Timer interval
+ 316 
+ 317 Use `timerInterval` to display a live countdown or count-up timer. This requires iOS/tvOS 16+.
+ 318 
+ 319 ![A countdown reading 9 minutes and 54 seconds](/static/images/expo-ui/examples/text-timer-interval-ios-light.webp)
+ 320 
+ 338 
+ 339 > **Note:** `timerInterval`, `countsDown`, and `pauseTime` require iOS 16.0+ / tvOS 16.0+. On older versions, the timer interval will not render.
+ 340 
+ 341 ## API
+ 342 
+ 346 

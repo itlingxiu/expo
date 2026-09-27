@@ -1,0 +1,18 @@
+[
+  {
+    "name": "expo-mcp-tools.json",
+    "path": "docs/ui/components/ExpoMCPToolsTable/data/expo-mcp-tools.json",
+    "sha": "aca9743c457880a5c8222b40f85b6d9b65cb73cd",
+    "size": 11161,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/ui/components/ExpoMCPToolsTable/data/expo-mcp-tools.json?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/ui/components/ExpoMCPToolsTable/data/expo-mcp-tools.json",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/aca9743c457880a5c8222b40f85b6d9b65cb73cd",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/ui/components/ExpoMCPToolsTable/data/expo-mcp-tools.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/ui/components/ExpoMCPToolsTable/data/expo-mcp-tools.json?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/aca9743c457880a5c8222b40f85b6d9b65cb73cd",
+      "html": "https://github.com/expo/expo/blob/main/docs/ui/components/ExpoMCPToolsTable/data/expo-mcp-tools.json"
+    }
+  }
+]

@@ -1,0 +1,354 @@
+[
+  {
+    "name": "android-builds.mdx",
+    "path": "docs/pages/build-reference/android-builds.mdx",
+    "sha": "59e700f92f113daa136383bf03719dcbf1d72030",
+    "size": 7798,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/android-builds.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/android-builds.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/59e700f92f113daa136383bf03719dcbf1d72030",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/android-builds.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/android-builds.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/59e700f92f113daa136383bf03719dcbf1d72030",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/android-builds.mdx"
+    }
+  },
+  {
+    "name": "apk.mdx",
+    "path": "docs/pages/build-reference/apk.mdx",
+    "sha": "fd6e2283d5f93d1e6aa7654e58457d34f6e7ba66",
+    "size": 4394,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/apk.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/apk.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/fd6e2283d5f93d1e6aa7654e58457d34f6e7ba66",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/apk.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/apk.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/fd6e2283d5f93d1e6aa7654e58457d34f6e7ba66",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/apk.mdx"
+    }
+  },
+  {
+    "name": "app-extensions.mdx",
+    "path": "docs/pages/build-reference/app-extensions.mdx",
+    "sha": "ff9ba11050cced77e7e2ccf27671b6eeb1a135fd",
+    "size": 2582,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/app-extensions.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/app-extensions.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/ff9ba11050cced77e7e2ccf27671b6eeb1a135fd",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/app-extensions.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/app-extensions.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/ff9ba11050cced77e7e2ccf27671b6eeb1a135fd",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/app-extensions.mdx"
+    }
+  },
+  {
+    "name": "app-versions.mdx",
+    "path": "docs/pages/build-reference/app-versions.mdx",
+    "sha": "03ec33c8b2b056e5b300586a162b138b154cef43",
+    "size": 10213,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/app-versions.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/app-versions.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/03ec33c8b2b056e5b300586a162b138b154cef43",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/app-versions.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/app-versions.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/03ec33c8b2b056e5b300586a162b138b154cef43",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/app-versions.mdx"
+    }
+  },
+  {
+    "name": "build-configuration.mdx",
+    "path": "docs/pages/build-reference/build-configuration.mdx",
+    "sha": "dedfda6639427c67be01910d6fe3db33ca53349a",
+    "size": 3640,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/build-configuration.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/build-configuration.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/dedfda6639427c67be01910d6fe3db33ca53349a",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/build-configuration.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/build-configuration.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/dedfda6639427c67be01910d6fe3db33ca53349a",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/build-configuration.mdx"
+    }
+  },
+  {
+    "name": "build-with-monorepos.mdx",
+    "path": "docs/pages/build-reference/build-with-monorepos.mdx",
+    "sha": "f081369cad9ece316ef7a0eda9185f975bae6654",
+    "size": 1133,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/build-with-monorepos.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/build-with-monorepos.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/f081369cad9ece316ef7a0eda9185f975bae6654",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/build-with-monorepos.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/build-with-monorepos.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/f081369cad9ece316ef7a0eda9185f975bae6654",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/build-with-monorepos.mdx"
+    }
+  },
+  {
+    "name": "caching.mdx",
+    "path": "docs/pages/build-reference/caching.mdx",
+    "sha": "1672a768a0b641b92eebd2fd66fa24794f2c84e7",
+    "size": 12229,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/caching.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/caching.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/1672a768a0b641b92eebd2fd66fa24794f2c84e7",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/caching.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/caching.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/1672a768a0b641b92eebd2fd66fa24794f2c84e7",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/caching.mdx"
+    }
+  },
+  {
+    "name": "easignore.mdx",
+    "path": "docs/pages/build-reference/easignore.mdx",
+    "sha": "9c5eb5c20ca687c24416d2524cc7cb72e5df3403",
+    "size": 2681,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/easignore.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/easignore.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/9c5eb5c20ca687c24416d2524cc7cb72e5df3403",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/easignore.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/easignore.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/9c5eb5c20ca687c24416d2524cc7cb72e5df3403",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/easignore.mdx"
+    }
+  },
+  {
+    "name": "git-submodules.mdx",
+    "path": "docs/pages/build-reference/git-submodules.mdx",
+    "sha": "b2bdf97363be0b0a982222901178459771fef609",
+    "size": 1631,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/git-submodules.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/git-submodules.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/b2bdf97363be0b0a982222901178459771fef609",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/git-submodules.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/git-submodules.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/b2bdf97363be0b0a982222901178459771fef609",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/git-submodules.mdx"
+    }
+  },
+  {
+    "name": "infrastructure.mdx",
+    "path": "docs/pages/build-reference/infrastructure.mdx",
+    "sha": "bc9a89ca70bbee9bfc1408a06ac240bd6e9a01f5",
+    "size": 16513,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/infrastructure.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/bc9a89ca70bbee9bfc1408a06ac240bd6e9a01f5",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/infrastructure.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/infrastructure.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/bc9a89ca70bbee9bfc1408a06ac240bd6e9a01f5",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+    }
+  },
+  {
+    "name": "ios-builds.mdx",
+    "path": "docs/pages/build-reference/ios-builds.mdx",
+    "sha": "328ea3b5b250ba032f60563680ecc9ce86e90a4b",
+    "size": 5621,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/ios-builds.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/ios-builds.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/328ea3b5b250ba032f60563680ecc9ce86e90a4b",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/ios-builds.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/ios-builds.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/328ea3b5b250ba032f60563680ecc9ce86e90a4b",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/ios-builds.mdx"
+    }
+  },
+  {
+    "name": "ios-capabilities.mdx",
+    "path": "docs/pages/build-reference/ios-capabilities.mdx",
+    "sha": "bf42f7128581a2f2672c55a1a9f7eeceeaeef40a",
+    "size": 17951,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/ios-capabilities.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/ios-capabilities.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/bf42f7128581a2f2672c55a1a9f7eeceeaeef40a",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/ios-capabilities.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/ios-capabilities.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/bf42f7128581a2f2672c55a1a9f7eeceeaeef40a",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/ios-capabilities.mdx"
+    }
+  },
+  {
+    "name": "limitations.mdx",
+    "path": "docs/pages/build-reference/limitations.mdx",
+    "sha": "2850e486e8d2627502aaf8f4227d2caff59809d5",
+    "size": 2871,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/limitations.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/limitations.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/2850e486e8d2627502aaf8f4227d2caff59809d5",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/limitations.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/limitations.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/2850e486e8d2627502aaf8f4227d2caff59809d5",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/limitations.mdx"
+    }
+  },
+  {
+    "name": "local-builds.mdx",
+    "path": "docs/pages/build-reference/local-builds.mdx",
+    "sha": "70d775a437c857a3dc4c4ce00944083f2adb799c",
+    "size": 4817,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/local-builds.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/local-builds.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/70d775a437c857a3dc4c4ce00944083f2adb799c",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/local-builds.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/local-builds.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/70d775a437c857a3dc4c4ce00944083f2adb799c",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/local-builds.mdx"
+    }
+  },
+  {
+    "name": "npm-cache-with-yarn.mdx",
+    "path": "docs/pages/build-reference/npm-cache-with-yarn.mdx",
+    "sha": "6dcf164370f3ee559bc90d87200cd24bc9f036f6",
+    "size": 912,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/npm-cache-with-yarn.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/npm-cache-with-yarn.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/6dcf164370f3ee559bc90d87200cd24bc9f036f6",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/npm-cache-with-yarn.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/npm-cache-with-yarn.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/6dcf164370f3ee559bc90d87200cd24bc9f036f6",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/npm-cache-with-yarn.mdx"
+    }
+  },
+  {
+    "name": "npm-hooks.mdx",
+    "path": "docs/pages/build-reference/npm-hooks.mdx",
+    "sha": "01691edfb72fec57d01c17ff04ce715793b6181d",
+    "size": 6292,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/npm-hooks.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/npm-hooks.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/01691edfb72fec57d01c17ff04ce715793b6181d",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/npm-hooks.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/npm-hooks.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/01691edfb72fec57d01c17ff04ce715793b6181d",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/npm-hooks.mdx"
+    }
+  },
+  {
+    "name": "npx-testflight.mdx",
+    "path": "docs/pages/build-reference/npx-testflight.mdx",
+    "sha": "b99483f2f56fd00073ba7a722d76d88fc27f551c",
+    "size": 4991,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/npx-testflight.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/npx-testflight.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/b99483f2f56fd00073ba7a722d76d88fc27f551c",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/npx-testflight.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/npx-testflight.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/b99483f2f56fd00073ba7a722d76d88fc27f551c",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/npx-testflight.mdx"
+    }
+  },
+  {
+    "name": "private-npm-packages.mdx",
+    "path": "docs/pages/build-reference/private-npm-packages.mdx",
+    "sha": "d96190853e4f01598a29d33feda1858bd83c717d",
+    "size": 3703,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/private-npm-packages.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/private-npm-packages.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/d96190853e4f01598a29d33feda1858bd83c717d",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/private-npm-packages.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/private-npm-packages.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/d96190853e4f01598a29d33feda1858bd83c717d",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/private-npm-packages.mdx"
+    }
+  },
+  {
+    "name": "repack.mdx",
+    "path": "docs/pages/build-reference/repack.mdx",
+    "sha": "62c558415c079a3ec572ce43ce427b2a41c8c8d8",
+    "size": 10360,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/repack.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/repack.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/62c558415c079a3ec572ce43ce427b2a41c8c8d8",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/repack.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/repack.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/62c558415c079a3ec572ce43ce427b2a41c8c8d8",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/repack.mdx"
+    }
+  },
+  {
+    "name": "simulators.mdx",
+    "path": "docs/pages/build-reference/simulators.mdx",
+    "sha": "2602868fae05713204908053294c7ebb1fa43986",
+    "size": 2802,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/simulators.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/simulators.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/2602868fae05713204908053294c7ebb1fa43986",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/simulators.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/simulators.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/2602868fae05713204908053294c7ebb1fa43986",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/simulators.mdx"
+    }
+  },
+  {
+    "name": "troubleshooting.mdx",
+    "path": "docs/pages/build-reference/troubleshooting.mdx",
+    "sha": "f1d742075272043d68bdab392379ae6cfef7bc96",
+    "size": 20143,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/troubleshooting.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/troubleshooting.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/f1d742075272043d68bdab392379ae6cfef7bc96",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/troubleshooting.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/troubleshooting.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/f1d742075272043d68bdab392379ae6cfef7bc96",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/troubleshooting.mdx"
+    }
+  },
+  {
+    "name": "variants.mdx",
+    "path": "docs/pages/build-reference/variants.mdx",
+    "sha": "3d0cba5b2e69bec88fec90adde5e757b75129edc",
+    "size": 14453,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/variants.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/variants.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/3d0cba5b2e69bec88fec90adde5e757b75129edc",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/build-reference/variants.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference/variants.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/3d0cba5b2e69bec88fec90adde5e757b75129edc",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/variants.mdx"
+    }
+  }
+]

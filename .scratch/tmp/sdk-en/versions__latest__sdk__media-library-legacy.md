@@ -1,0 +1,246 @@
+---
+title: MediaLibrary (legacy)
+description: A library that provides access to the device's media library.
+packageName: expo-media-library
+---
+
+# MediaLibrary (legacy)
+
+> 支持平台：Android、iOS、tvOS、Expo Go。
+
+:::warning
+The legacy version of the MediaLibrary API is included in the `expo-media-library` library. It can be used alongside the class-based `expo-media-library` API, which is exposed from the root import. To use the legacy API, import it from `expo-media-library/legacy`.
+:::
+
+`expo-media-library` provides access to the user's media library, allowing them to access their existing images and videos from your app, as well as save new ones. You can also subscribe to any updates made to the user's media library.
+
+:::warning
+Android allows full access to the media library (which is the purpose of this package) only for applications needing broad access to photos. See [Details on Google Play's Photo and Video Permissions policy](https://support.google.com/googleplay/android-developer/answer/14115180).
+:::
+
+## Installation
+
+:::tabs
+:::tab npm
+```sh
+npx expo install expo-media-library
+```
+:::
+:::tab yarn
+```sh
+yarn expo install expo-media-library
+```
+:::
+:::tab pnpm
+```sh
+pnpm expo install expo-media-library
+```
+:::
+:::tab bun
+```sh
+bun expo install expo-media-library
+```
+:::
+:::
+
+## Configuration in app config
+
+You can configure `expo-media-library` using its built-in [config plugin](/config-plugins/introduction) if you use config plugins in your project ([Continuous Native Generation (CNG)](/workflow/continuous-native-generation)). The plugin allows you to configure various properties that cannot be set at runtime and require building a new app binary to take effect. If your app does **not** use CNG, then you'll need to manually configure the library.
+
+### Example app.json with config plugin
+
+```json
+{
+  "expo": {
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
+          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
+          "isAccessMediaLocationEnabled": true,
+          "granularPermissions": ["audio", "photo"]
+        }
+      ]
+    ]
+  }
+}
+```
+
+### Configurable properties
+
+| Name | Default | Description |
+| --- | --- | --- |
+| `photosPermission` | `"Allow $(PRODUCT_NAME) to access your photos."` | Only for: iOS. Sets the iOS `NSPhotoLibraryUsageDescription` permission message in **Info.plist**. |
+| `savePhotosPermission` | `"Allow $(PRODUCT_NAME) to save photos."` | Only for: iOS. Sets the iOS `NSPhotoLibraryAddUsageDescription` permission message in **Info.plist**. |
+| `preventAutomaticLimitedAccessAlert` | `false` | Only for: iOS. Prevents the automatic limited access alert from being shown when the user has limited access to the photo library. Useful for apps that want to access only the limited photo library without having iOS forcibly show the alert. |
+| `isAccessMediaLocationEnabled` | `false` | Only for: Android. Sets whether or not to request the `ACCESS_MEDIA_LOCATION` permission on Android. |
+| `granularPermissions` | `["photo", "video", "audio"]` | Only for: Android. Sets which [`GranularPermission`](#granularpermission) values to include, determining which media permissions (`READ_MEDIA_IMAGES`, `READ_MEDIA_VIDEO`, `READ_MEDIA_AUDIO`) will be added to the Android manifest. Matches the behavior of the runtime API. |
+
+<details><summary>Are you using this library in an existing React Native app?</summary>
+
+If you're not using Continuous Native Generation ([CNG](/workflow/continuous-native-generation)) or you're using native **android** and **ios** projects manually, then you need to add following permissions and configuration to your native projects:
+
+**Android**
+
+- To access asset location (latitude and longitude EXIF tags), add `ACCESS_MEDIA_LOCATION` permission to your project's **android/app/src/main/AndroidManifest.xml**:
+
+  
+
+```xml
+  <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+  
+```
+
+- [Scoped storage](https://developer.android.com/training/data-storage#scoped-storage) is available from Android 10. To make `expo-media-library` work with scoped storage, you need to add the following configuration to your **android/app/src/main/AndroidManifest.xml**:
+
+  
+
+```xml
+  <manifest ... >
+    <application android:requestLegacyExternalStorage="true" ...>
+  </manifest>
+  
+```
+
+**iOS**
+
+- Add `NSPhotoLibraryUsageDescription`, and `NSPhotoLibraryAddUsageDescription` keys to your project's **ios/[app]/Info.plist**:
+
+  
+
+```xml
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Give $(PRODUCT_NAME) permission to access your photos</string>
+  <key>NSPhotoLibraryAddUsageDescription</key>
+  <string>Give $(PRODUCT_NAME) permission to save photos</string>
+  
+```
+
+</details>
+
+## Usage
+
+```jsx
+import { useState, useEffect } from 'react';
+import { Button, Text, ScrollView, StyleSheet, Image, View, Platform } from 'react-native';
+import * as MediaLibrary from 'expo-media-library/legacy';
+
+export default function App() {
+  const [albums, setAlbums] = useState(null);
+  const [permissionResponse, requestPermission] = MediaLibrary.usePermissions();
+
+  async function getAlbums() {
+    if (permissionResponse.status !== 'granted') {
+      await requestPermission();
+    }
+    const fetchedAlbums = await MediaLibrary.getAlbumsAsync({
+      includeSmartAlbums: true,
+    });
+    setAlbums(fetchedAlbums);
+  }
+
+  return (
+    <View style={styles.container}>
+      <Button onPress={getAlbums} title="Get albums" />
+      <ScrollView>
+        {albums && albums.map((album) => <AlbumEntry album={album} />)}
+      </ScrollView>
+    </View>
+  );
+}
+
+function AlbumEntry({ album }) {
+  const [assets, setAssets] = useState([]);
+
+  useEffect(() => {
+    async function getAlbumAssets() {
+      const albumAssets = await MediaLibrary.getAssetsAsync({ album });
+      setAssets(albumAssets.assets);
+    }
+    getAlbumAssets();
+  }, [album]);
+
+  return (
+    <View key={album.id} style={styles.albumContainer}>
+      <Text>
+        {album.title} - {album.assetCount ?? 'no'} assets
+      </Text>
+      <View style={styles.albumAssetsContainer}>
+        {assets && assets.map((asset) => (
+          <Image source={{ uri: asset.uri }} width={50} height={50} />
+        ))}
+      </View>
+    </View>
+  );
+}
+
+/* @hide const styles = StyleSheet.create({ ... }); */
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    gap: 8,
+    justifyContent: 'center',
+  },
+  albumContainer: {
+    paddingHorizontal: 20,
+    marginBottom: 12,
+    gap: 4,
+  },
+  albumAssetsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+});
+/* @end */
+```
+
+## Known limitations
+
+### Empty albums
+
+Due to system limitations on Android, it is impossible to create empty albums. It is necessary to either pass an existing asset to add to the album or a URI of a local resource, which will be used to create a new asset inside the album.
+
+### Moving assets between albums
+
+Android 11 introduced permission changes that make the operation of moving assets between albums require confirmation from the user every time.
+Therefore, when creating a new asset, instead of creating the asset and then moving it to the album, it is recommended to pass the `album` parameter to the [`createAssetAsync`](#medialibrarycreateassetasynclocaluri-album) method, which will automatically add the asset to the album without the need for user confirmation.
+
+### Wrong orientation of images
+
+On Android, when using `getAssetsAsync` without `resolveWithFullInfo: true`, image orientation may be incorrect because EXIF data (which includes orientation) is only read when that option is enabled.
+
+### Performance impact of `resolveWithFullInfo`
+
+On Android, enabling `resolveWithFullInfo: true` in `getAssetsAsync` significantly increases request time (~5×), because the library fetches EXIF and location data per image. The library resolves location and EXIF data for image assets only. iOS includes GPS location for all asset types in batch results, and this option does nothing.
+
+## API
+
+```js
+import * as MediaLibrary from 'expo-media-library/legacy';
+```
+
+## Permissions
+
+### Android
+
+The following permissions are added automatically through this library's **AndroidManifest.xml**:
+
+| Android permission | Description |
+| --- | --- |
+| `READ_EXTERNAL_STORAGE` | Allows an application to read from external storage. |
+| `WRITE_EXTERNAL_STORAGE` | Allows an application to write to external storage. |
+| `READ_MEDIA_IMAGES` | Allows an application to read image files from external storage. |
+| `READ_MEDIA_VIDEO` | Allows an application to read video files from external storage. |
+| `READ_MEDIA_AUDIO` | Allows an application to read audio files from external storage. |
+| `READ_MEDIA_VISUAL_USER_SELECTED` | Allows an application to read image or video files from external storage that a user has selected via the permission prompt photo picker. Apps can check this permission to verify that a user has decided to use the photo picker, instead of granting access to `[READ_MEDIA_IMAGES](https://developer.android.com/reference/android/Manifest.permission#READ_MEDIA_IMAGES)` or `[READ_MEDIA_VIDEO](https://developer.android.com/reference/android/Manifest.permission#READ_MEDIA_VIDEO)`. It does not prevent apps from accessing the standard photo picker manually. This permission should be requested alongside `[READ_MEDIA_IMAGES](https://developer.android.com/reference/android/Manifest.permission#READ_MEDIA_IMAGES)` and/or `[READ_MEDIA_VIDEO](https://developer.android.com/reference/android/Manifest.permission#READ_MEDIA_VIDEO)`, depending on which type of media is desired. |
+
+### iOS
+
+The following usage description keys are used by this library:
+
+| Info.plist key | Description |
+| --- | --- |
+| `NSPhotoLibraryUsageDescription` | A message that tells the user why the app is requesting access to the user’s photo library. Warning: This key is required if your app uses APIs that have read or write access to the user’s photo library. |
+| `NSPhotoLibraryAddUsageDescription` | A message that tells the user why the app is requesting add-only access to the user’s photo library. Warning: This key is required if your app uses APIs that have write access to the user’s photo library. |
+

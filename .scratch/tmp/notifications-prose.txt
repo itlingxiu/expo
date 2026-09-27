@@ -1,0 +1,303 @@
+1|---
+2|title: Notifications
+3|description: A library that provides an API to fetch push notification tokens and to present, schedule, receive and respond to notifications.
+4|packageName: expo-notifications
+5|---
+7|# Notifications
+9|> 支持平台：Android、iOS。
+38|npx expo install expo-notifications
+43|yarn expo install expo-notifications
+48|pnpm expo install expo-notifications
+53|bun expo install expo-notifications
+76|import { useState, useEffect } from 'react';
+77|import { Text, View, Button, Platform } from 'react-native';
+78|import * as Notifications from 'expo-notifications';
+79|import Constants from 'expo-constants';
+81|Notifications.setNotificationHandler({
+82|  handleNotification: async () => ({
+83|    shouldPlaySound: false,
+84|    shouldSetBadge: false,
+85|    shouldShowBanner: true,
+86|    shouldShowList: true,
+87|  }),
+88|});
+90|export default function App() {
+91|  const [expoPushToken, setExpoPushToken] = useState('');
+92|  const [channels, setChannels] = useState<Notifications.NotificationChannel[]>([]);
+93|  const [notification, setNotification] = useState<Notifications.Notification | undefined>(
+94|    undefined
+95|  );
+97|  useEffect(() => {
+98|    registerForPushNotificationsAsync().then(token => token && setExpoPushToken(token));
+100|    if (Platform.OS === 'android') {
+101|      Notifications.getNotificationChannelsAsync().then(value => setChannels(value ?? []));
+102|    }
+103|    const notificationListener = Notifications.addNotificationReceivedListener(notification => {
+104|      setNotification(notification);
+105|    });
+107|    const responseListener = Notifications.addNotificationResponseReceivedListener(response => {
+108|      console.log(response);
+109|    });
+111|    return () => {
+112|      notificationListener.remove();
+113|      responseListener.remove();
+114|    };
+115|  }, []);
+117|  return (
+118|    <View
+119|      style={{
+120|        flex: 1,
+121|        alignItems: 'center',
+122|        justifyContent: 'space-around',
+123|      }}>
+124|      <Text>Your expo push token: {expoPushToken}</Text>
+125|      <Text>{`Channels: ${JSON.stringify(
+126|        channels.map(c => c.id),
+127|        null,
+128|        2
+129|      )}`}</Text>
+130|      <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+131|        <Text>Title: {notification && notification.request.content.title} </Text>
+132|        <Text>Body: {notification && notification.request.content.body}</Text>
+133|        <Text>Data: {notification && JSON.stringify(notification.request.content.data)}</Text>
+134|      </View>
+135|      <Button
+136|        title="Press to schedule a notification"
+137|        onPress={async () => {
+138|          await schedulePushNotification();
+139|        }}
+140|      />
+141|    </View>
+142|  );
+143|}
+145|async function schedulePushNotification() {
+146|  await Notifications.scheduleNotificationAsync({
+147|    content: {
+148|      title: "You've got mail! 📬",
+149|      body: 'Here is the notification body',
+150|      data: { data: 'goes here', test: { test1: 'more data' } },
+151|    },
+152|    trigger: {
+153|      type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
+154|      seconds: 2,
+155|    },
+156|  });
+157|}
+159|async function registerForPushNotificationsAsync() {
+160|  let token;
+162|  if (Platform.OS === 'android') {
+163|    await Notifications.setNotificationChannelAsync('myNotificationChannel', {
+164|      name: 'A channel is needed for the permissions prompt to appear',
+165|      importance: Notifications.AndroidImportance.MAX,
+166|      vibrationPattern: [0, 250, 250, 250],
+167|      lightColor: '#FF231F7C',
+168|    });
+169|  }
+171|  const { status: existingStatus } = await Notifications.getPermissionsAsync();
+172|  let finalStatus = existingStatus;
+173|  if (existingStatus !== 'granted') {
+174|    const { status } = await Notifications.requestPermissionsAsync();
+175|    finalStatus = status;
+176|  }
+177|  if (finalStatus !== 'granted') {
+178|    alert('Failed to get push token for push notification!');
+179|    return;
+180|  }
+181|  // Learn more about projectId:
+182|  // https://docs.expo.dev/push-notifications/push-notifications-setup/#configure-projectid
+183|  // EAS projectId is used here.
+184|  try {
+185|    const projectId =
+186|      Constants?.expoConfig?.extra?.eas?.projectId ?? Constants?.easConfig?.projectId;
+187|    if (!projectId) {
+188|      throw new Error('Project ID not found');
+189|    }
+190|    token = (
+191|      await Notifications.getExpoPushTokenAsync({
+192|        projectId,
+193|      })
+194|    ).data;
+195|    console.log(token);
+196|  } catch (e) {
+197|    token = `${e}`;
+198|  }
+200|  return token;
+201|}
+207|import * as Notifications from 'expo-notifications';
+209|Notifications.scheduleNotificationAsync({
+210|  content: {
+211|    title: 'Look at that notification',
+212|    body: "I'm so proud of myself!",
+213|  },
+214|  trigger: null,
+215|});
+227|import { useEffect } from 'react';
+228|import * as Notifications from 'expo-notifications';
+229|import { Slot, router } from 'expo-router';
+231|function useNotificationObserver() {
+232|  useEffect(() => {
+233|    function redirect(notification: Notifications.Notification) {
+234|      const url = notification.request.content.data?.url;
+235|      if (typeof url === 'string') {
+236|        /* @info Push the URL. You may want to verify the format before navigating. */
+237|        router.push(url);
+238|        /* @end */
+239|        /* @info Clear the stored response so a layout re-mount does not redirect to the same URL again. */
+240|        Notifications.clearLastNotificationResponse();
+241|        /* @end */
+242|      }
+243|    }
+245|    /* @info Handle the initial push notification. */
+246|    const response = Notifications.getLastNotificationResponse();
+247|    if (response?.notification) {
+248|      redirect(response.notification);
+249|    }
+251|    /* @info Listen for runtime notifications. */
+252|    const subscription = Notifications.addNotificationResponseReceivedListener(response => {
+253|      /* @end */
+254|      redirect(response.notification);
+255|    });
+257|    return () => {
+258|      subscription.remove();
+259|    };
+260|  }, []);
+261|}
+263|export default function Layout() {
+264|  /* @info Observe at the root. Ensure this layout never returns **null** or the navigation will go unhandled. */
+265|  useNotificationObserver();
+266|  /* @end */
+268|  return <Slot />;
+269|}
+277|import React from 'react';
+278|import { Linking } from 'react-native';
+279|import * as Notifications from 'expo-notifications';
+280|import { NavigationContainer } from '@react-navigation/native';
+282|export default function App() {
+283|  return (
+284|    <NavigationContainer
+285|      linking={{
+286|        config: {
+287|          // Configuration for linking
+288|        },
+289|        async getInitialURL() {
+290|          // First, you may want to do the default deep link handling
+291|          // Check if app was opened from a deep link
+292|          const url = await Linking.getInitialURL();
+294|          if (url != null) {
+295|            return url;
+296|          }
+298|          // Handle URL from expo push notifications
+299|          const response = Notifications.getLastNotificationResponse();
+300|          const notificationUrl = response?.notification.request.content.data?.url;
+301|          if (typeof notificationUrl === 'string') {
+302|            return notificationUrl;
+303|          }
+304|        },
+305|        subscribe(listener) {
+306|          const onReceiveURL = ({ url }: { url: string }) => listener(url);
+308|          // Listen to incoming links from deep linking
+309|          const eventListenerSubscription = Linking.addEventListener('url', onReceiveURL);
+311|          // Listen to expo push notifications
+312|          const subscription = Notifications.addNotificationResponseReceivedListener(response => {
+313|            const url = response.notification.request.content.data?.url;
+315|            // Any custom logic to see whether the URL needs to be handled
+316|            //...
+318|            if (typeof url === 'string') {
+319|              // Let React Navigation handle the URL
+320|              listener(url);
+321|            }
+323|            // Clear the stored response so the next getInitialURL call does not redirect to the same URL again
+324|            Notifications.clearLastNotificationResponse();
+325|          });
+327|          return () => {
+328|            // Clean up the event listeners
+329|            eventListenerSubscription.remove();
+330|            subscription.remove();
+331|          };
+332|        },
+333|      }}>
+335|    </NavigationContainer>
+336|  );
+337|}
+368|{
+369|  "expo": {
+370|    "plugins": [
+371|      [
+372|        "expo-notifications",
+373|        {
+374|          "icon": "./local/assets/notification_icon.png",
+375|          "largeIcon": "./local/assets/notification_large_icon.png",
+376|          "color": "#ffffff",
+377|          "defaultChannel": "default",
+378|          "sounds": [
+379|            "./local/assets/notification_sound.wav",
+380|            "./local/assets/notification_sound_other.wav"
+381|          ],
+382|          "enableBackgroundRemoteNotifications": false
+383|        }
+384|      ]
+385|    ]
+386|  }
+387|}
+472|<key>UIBackgroundModes</key>
+473|<array>
+474|  <string>remote-notification</string>
+475|</array>
+487|{
+488|  "expo": {
+489|    "plugins": [
+490|      [
+491|        "expo-notifications",
+492|        {
+493|          "sounds": ["local/path/to/mySoundFile.wav"]
+494|        }
+495|      ]
+496|    ]
+497|  }
+498|}
+505|await Notifications.setNotificationChannelAsync('new_emails', {
+506|  name: 'E-mail notifications',
+507|  importance: Notifications.AndroidImportance.HIGH,
+508|  sound: 'mySoundFile.wav', // Provide ONLY the base filename
+509|});
+511|await Notifications.scheduleNotificationAsync({
+512|  content: {
+513|    title: "You've got mail! 📬",
+514|    sound: 'mySoundFile.wav', // Provide ONLY the base filename
+515|  },
+516|  trigger: {
+517|    type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
+518|    seconds: 2,
+519|    channelId: 'new_emails',
+520|  },
+521|});
+534|// Prepare the notification channel
+535|await Notifications.setNotificationChannelAsync('new_emails', {
+536|  name: 'E-mail notifications',
+537|  importance: Notifications.AndroidImportance.HIGH,
+538|  sound: 'email_sound.wav', // <- for Android 8.0+, see channelId property below
+539|});
+541|// Eg. schedule the notification
+542|await Notifications.scheduleNotificationAsync({
+543|  content: {
+544|    title: "You've got mail! 📬",
+545|    body: 'Open the notification to read them all',
+546|    sound: 'email_sound.wav', // <- for Android below 8.0
+547|  },
+548|  trigger: {
+549|    type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
+550|    seconds: 2,
+551|    channelId: 'new_emails', // <- for Android 8.0+, see definition above
+552|  },
+553|});
+564|await Notifications.scheduleNotificationAsync({
+565|  content: {
+566|    title: "You've got mail! 📬",
+567|    body: 'Open the notification to read them all',
+568|    sound: 'notification.wav',
+569|  },
+570|  trigger: {
+571|    // ...
+572|  },
+573|});
+620|import * as Notifications from 'expo-notifications';

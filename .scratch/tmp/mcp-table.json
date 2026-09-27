@@ -1,0 +1,66 @@
+[
+  {
+    "name": "data",
+    "path": "docs/ui/components/ExpoMCPToolsTable/data",
+    "sha": "e1e2f0a7804aae92c5b68b498274d176436ca529",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/ui/components/ExpoMCPToolsTable/data?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/ui/components/ExpoMCPToolsTable/data",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/e1e2f0a7804aae92c5b68b498274d176436ca529",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/ui/components/ExpoMCPToolsTable/data?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/e1e2f0a7804aae92c5b68b498274d176436ca529",
+      "html": "https://github.com/expo/expo/tree/main/docs/ui/components/ExpoMCPToolsTable/data"
+    }
+  },
+  {
+    "name": "expo-mcp-oauth.js",
+    "path": "docs/ui/components/ExpoMCPToolsTable/expo-mcp-oauth.js",
+    "sha": "bd6f3757ba852270a8ec1021ef863ee77a943d75",
+    "size": 5801,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/ui/components/ExpoMCPToolsTable/expo-mcp-oauth.js?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/ui/components/ExpoMCPToolsTable/expo-mcp-oauth.js",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/bd6f3757ba852270a8ec1021ef863ee77a943d75",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/ui/components/ExpoMCPToolsTable/expo-mcp-oauth.js",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/ui/components/ExpoMCPToolsTable/expo-mcp-oauth.js?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/bd6f3757ba852270a8ec1021ef863ee77a943d75",
+      "html": "https://github.com/expo/expo/blob/main/docs/ui/components/ExpoMCPToolsTable/expo-mcp-oauth.js"
+    }
+  },
+  {
+    "name": "index.tsx",
+    "path": "docs/ui/components/ExpoMCPToolsTable/index.tsx",
+    "sha": "7fcf2749e3c1147a2e3803c1239b8f70f729740e",
+    "size": 1700,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/ui/components/ExpoMCPToolsTable/index.tsx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/ui/components/ExpoMCPToolsTable/index.tsx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/7fcf2749e3c1147a2e3803c1239b8f70f729740e",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/ui/components/ExpoMCPToolsTable/index.tsx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/ui/components/ExpoMCPToolsTable/index.tsx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/7fcf2749e3c1147a2e3803c1239b8f70f729740e",
+      "html": "https://github.com/expo/expo/blob/main/docs/ui/components/ExpoMCPToolsTable/index.tsx"
+    }
+  },
+  {
+    "name": "sync-expo-mcp-tools.js",
+    "path": "docs/ui/components/ExpoMCPToolsTable/sync-expo-mcp-tools.js",
+    "sha": "6b9de9725050476e4c5edfd4eed6056920d7aad0",
+    "size": 7550,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/ui/components/ExpoMCPToolsTable/sync-expo-mcp-tools.js?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/ui/components/ExpoMCPToolsTable/sync-expo-mcp-tools.js",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/6b9de9725050476e4c5edfd4eed6056920d7aad0",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/ui/components/ExpoMCPToolsTable/sync-expo-mcp-tools.js",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/ui/components/ExpoMCPToolsTable/sync-expo-mcp-tools.js?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/6b9de9725050476e4c5edfd4eed6056920d7aad0",
+      "html": "https://github.com/expo/expo/blob/main/docs/ui/components/ExpoMCPToolsTable/sync-expo-mcp-tools.js"
+    }
+  }
+]

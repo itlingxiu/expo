@@ -1,0 +1,222 @@
+---
+title: Menu
+description: A menu compatible with @react-native-menu/menu.
+packageName: @expo/ui
+---
+
+# Menu
+
+> 支持平台：Android、iOS、Expo Go。
+
+A `MenuView` component with an API compatible with [`@react-native-menu/menu`](https://www.npmjs.com/package/@react-native-menu/menu). Supports both single-tap (default) and long-press (`shouldOpenOnLongPress`) triggers.
+
+Under the hood this component wraps the platform-specific `@expo/ui` primitives:
+
+- **Android**: [Jetpack Compose DropdownMenu](/versions/latest/sdk/ui/jetpack-compose/dropdownmenu) anchored to an internal `Pressable` trigger.
+- **iOS**: [SwiftUI Menu](/versions/latest/sdk/ui/swift-ui/menu) for tap triggers and [SwiftUI ContextMenu](/versions/latest/sdk/ui/swift-ui/contextmenu) for long-press triggers.
+
+If you need lower-level control, use those primitives directly.
+
+![An open menu with an Edit row and a Delete row（Android）](/static/images/expo-ui/community-menu/android-light.webp)
+
+![An open menu with an Edit row and a red Delete row（iOS）](/static/images/expo-ui/community-menu/ios-light.webp)
+
+## Installation
+
+:::tabs
+:::tab npm
+```sh
+npx expo install @expo/ui
+```
+:::
+:::tab yarn
+```sh
+yarn expo install @expo/ui
+```
+:::
+:::tab pnpm
+```sh
+pnpm expo install @expo/ui
+```
+:::
+:::tab bun
+```sh
+bun expo install @expo/ui
+```
+:::
+:::
+
+## Migrating from `@react-native-menu/menu`
+
+- Update the import from `import { MenuView } from '@react-native-menu/menu'` to `import { MenuView } from '@expo/ui/community/menu'`.
+- `action.image` on Android differs from upstream. `@react-native-menu/menu` expects a **drawable resource name** string (for example, `'ic_menu_add'`) that it resolves against `android/app/src/main/res/drawable/`. This drop-in does **not** resolve drawable resource names — pass an `ImageSourcePropType` instead (for example, `require('@expo/material-symbols/edit.xml')`). String values are accepted on iOS as SF Symbol names. Use [`Icon.select`](/versions/latest/sdk/ui/universal/icon) to define both per call site so the unused side tree-shakes out per platform.
+- `title` is rendered as a section header on iOS only; Android's Material `DropdownMenu` has no title slot.
+- On Android, `MenuView` wraps the trigger in its own `Pressable` to open the menu, so an `onPress`/`onLongPress` handler attached to a `Pressable` you pass as `children` won't fire — the outer wrapper claims the gesture. Move that handler into your `onPressAction` switch instead, or use the lower-level [`DropdownMenu`](/versions/latest/sdk/ui/jetpack-compose/dropdownmenu) primitive if you need to keep separate tap and long-press actions on the trigger.
+- The imperative `ref.show()` API is **Android-only**. SwiftUI `Menu`/`ContextMenu` have no programmatic open API, so on iOS the call is a no-op (with a one-time dev warning).
+- The following props from `@react-native-menu/menu` are not supported: `themeVariant`, `hitSlop`, `isAnchoredToRight`, `subtitle`, `keepsMenuPresented`, `preferredElementSize`, and `state: 'mixed'`.
+
+## Basic usage
+
+Pass any view as the trigger. `MenuView` attaches its own tap or long-press handling.
+
+![An open menu with an Edit row and a Delete row（Android）](/static/images/expo-ui/examples/community-menu-basic-android-light.webp)
+
+![An open menu with an Edit row and a red Delete row（iOS）](/static/images/expo-ui/examples/community-menu-basic-ios-light.webp)
+
+```tsx
+import { Icon } from '@expo/ui';
+import { MenuView } from '@expo/ui/community/menu';
+import { Text, useColorScheme, View } from 'react-native';
+
+const editIcon = Icon.select({
+  ios: 'pencil',
+  android: import('@expo/material-symbols/edit.xml'),
+});
+
+const deleteIcon = Icon.select({
+  ios: 'trash',
+  android: import('@expo/material-symbols/delete.xml'),
+});
+
+export default function MenuExample() {
+  const colorScheme = useColorScheme();
+  return (
+    <MenuView
+      actions={[
+        { id: 'edit', title: 'Edit', image: editIcon },
+        { id: 'delete', title: 'Delete', image: deleteIcon, attributes: { destructive: true } },
+      ]}
+      onPressAction={e => console.log(e.nativeEvent.event)}>
+      <View>
+        <Text style={{ color: colorScheme === 'dark' ? '#FFFFFF' : '#000000' }}>Open menu</Text>
+      </View>
+    </MenuView>
+  );
+}
+```
+
+## Long-press (context menu)
+
+Set `shouldOpenOnLongPress` to render as a context menu. On Android, the same controlled `DropdownMenu` opens from a long press on the trigger instead of a tap. On iOS, this uses SwiftUI's `ContextMenu` and shows the trigger as a blurred preview.
+
+![An open menu with Copy and Share rows（Android）](/static/images/expo-ui/examples/community-menu-long-press-android-light.webp)
+
+![An open context menu with Copy and Share rows（iOS）](/static/images/expo-ui/examples/community-menu-long-press-ios-light.webp)
+
+```tsx
+import { Icon } from '@expo/ui';
+import { MenuView } from '@expo/ui/community/menu';
+import { Text, useColorScheme, View } from 'react-native';
+
+const copyIcon = Icon.select({
+  ios: 'doc.on.doc',
+  android: import('@expo/material-symbols/content_copy.xml'),
+});
+
+const shareIcon = Icon.select({
+  ios: 'square.and.arrow.up',
+  android: import('@expo/material-symbols/share.xml'),
+});
+
+export default function LongPressMenuExample() {
+  const colorScheme = useColorScheme();
+  return (
+    <MenuView
+      shouldOpenOnLongPress
+      actions={[
+        { id: 'copy', title: 'Copy', image: copyIcon },
+        { id: 'share', title: 'Share', image: shareIcon },
+      ]}
+      onPressAction={e => console.log(e.nativeEvent.event)}>
+      <View style={{ padding: 8 }}>
+        <Text style={{ color: colorScheme === 'dark' ? '#FFFFFF' : '#000000' }}>Long-press me</Text>
+      </View>
+    </MenuView>
+  );
+}
+```
+
+## Submenus and inline sections
+
+`subactions` renders nested actions as a submenu by default. Set `displayInline: true` on the parent to render the children as an inline section instead, which is useful for grouping. On Android, only the divider appears (Material's `DropdownMenu` has no section primitive). On iOS, the parent's `title` becomes the section header.
+
+![An open menu with the Sort by submenu expanded（Android）](/static/images/expo-ui/examples/community-menu-submenu-android-light.webp)
+
+![An open menu with the Sort by submenu expanded（iOS）](/static/images/expo-ui/examples/community-menu-submenu-ios-light.webp)
+
+```tsx
+import { MenuView } from '@expo/ui/community/menu';
+import { Text, useColorScheme, View } from 'react-native';
+
+export default function SubmenuExample() {
+  const colorScheme = useColorScheme();
+  return (
+    <MenuView
+      actions={[
+        { id: 'rename', title: 'Rename' },
+        {
+          id: 'sort',
+          title: 'Sort by',
+          subactions: [
+            { id: 'sort-name', title: 'Name' },
+            { id: 'sort-date', title: 'Date' },
+            { id: 'sort-size', title: 'Size' },
+          ],
+        },
+        {
+          id: 'share-section',
+          title: 'Share',
+          displayInline: true,
+          subactions: [
+            { id: 'share-airdrop', title: 'AirDrop' },
+            { id: 'share-message', title: 'Message' },
+          ],
+        },
+      ]}
+      onPressAction={e => console.log(e.nativeEvent.event)}>
+      <View>
+        <Text style={{ color: colorScheme === 'dark' ? '#FFFFFF' : '#000000' }}>Open menu</Text>
+      </View>
+    </MenuView>
+  );
+}
+```
+
+## Toggle items with checkmarks
+
+Set `state` to `'on'` or `'off'` to render an action as a toggleable item with a leading checkmark when on. Selecting the action fires `onPressAction` and the caller is responsible for updating the state.
+
+![An open menu with a checkmark next to Pin to top（Android）](/static/images/expo-ui/examples/community-menu-toggle-android-light.webp)
+
+![An open menu with a checkmark next to Pin to top（iOS）](/static/images/expo-ui/examples/community-menu-toggle-ios-light.webp)
+
+```tsx
+import { MenuView } from '@expo/ui/community/menu';
+import { useState } from 'react';
+import { Text, useColorScheme, View } from 'react-native';
+
+export default function ToggleMenuExample() {
+  const colorScheme = useColorScheme();
+  const [pinned, setPinned] = useState(false);
+  return (
+    <MenuView
+      actions={[{ id: 'pin', title: 'Pin to top', state: pinned ? 'on' : 'off' }]}
+      onPressAction={e => {
+        if (e.nativeEvent.event === 'pin') setPinned(p => !p);
+      }}>
+      <View>
+        <Text style={{ color: colorScheme === 'dark' ? '#FFFFFF' : '#000000' }}>
+          {pinned ? 'Pinned' : 'Not pinned'}
+        </Text>
+      </View>
+    </MenuView>
+  );
+}
+```
+
+## API
+
+```tsx
+import { MenuView } from '@expo/ui/community/menu';
+```
+

@@ -1,0 +1,770 @@
+[
+  {
+    "name": "_app.tsx",
+    "path": "docs/pages/_app.tsx",
+    "sha": "842565a9c71a232c6018d3a44545025b8334c9fd",
+    "size": 4321,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/_app.tsx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/_app.tsx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/842565a9c71a232c6018d3a44545025b8334c9fd",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/_app.tsx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/_app.tsx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/842565a9c71a232c6018d3a44545025b8334c9fd",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/_app.tsx"
+    }
+  },
+  {
+    "name": "_document.tsx",
+    "path": "docs/pages/_document.tsx",
+    "sha": "5596cd3715ae2c601181546f82ec0cb844496aed",
+    "size": 2191,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/_document.tsx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/_document.tsx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/5596cd3715ae2c601181546f82ec0cb844496aed",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/_document.tsx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/_document.tsx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/5596cd3715ae2c601181546f82ec0cb844496aed",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/_document.tsx"
+    }
+  },
+  {
+    "name": "_error.tsx",
+    "path": "docs/pages/_error.tsx",
+    "sha": "3e1cb3ed9a08894c15011cb618cbc34cb27d9c36",
+    "size": 3003,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/_error.tsx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/_error.tsx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/3e1cb3ed9a08894c15011cb618cbc34cb27d9c36",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/_error.tsx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/_error.tsx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/3e1cb3ed9a08894c15011cb618cbc34cb27d9c36",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/_error.tsx"
+    }
+  },
+  {
+    "name": "accounts",
+    "path": "docs/pages/accounts",
+    "sha": "05412964011d8132280d72c1da812313985df358",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/accounts?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/accounts",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/05412964011d8132280d72c1da812313985df358",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/accounts?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/05412964011d8132280d72c1da812313985df358",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/accounts"
+    }
+  },
+  {
+    "name": "additional-resources",
+    "path": "docs/pages/additional-resources",
+    "sha": "e93d15a4e3e3fc2a0a6555225a96dfd8f313f43d",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/additional-resources?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/additional-resources",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/e93d15a4e3e3fc2a0a6555225a96dfd8f313f43d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/additional-resources?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/e93d15a4e3e3fc2a0a6555225a96dfd8f313f43d",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/additional-resources"
+    }
+  },
+  {
+    "name": "agents",
+    "path": "docs/pages/agents",
+    "sha": "a84188d0f1748c11d224419c6ba542f687954934",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/agents?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/agents",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/a84188d0f1748c11d224419c6ba542f687954934",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/agents?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/a84188d0f1748c11d224419c6ba542f687954934",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/agents"
+    }
+  },
+  {
+    "name": "app-signing",
+    "path": "docs/pages/app-signing",
+    "sha": "e1590a3aee065f686e46a168ae78c0c01dacaccd",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/app-signing?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/app-signing",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/e1590a3aee065f686e46a168ae78c0c01dacaccd",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/app-signing?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/e1590a3aee065f686e46a168ae78c0c01dacaccd",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/app-signing"
+    }
+  },
+  {
+    "name": "archive",
+    "path": "docs/pages/archive",
+    "sha": "9aae1d46457bb4a46f1feb93a9f69eaff9021046",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/archive?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/archive",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/9aae1d46457bb4a46f1feb93a9f69eaff9021046",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/archive?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/9aae1d46457bb4a46f1feb93a9f69eaff9021046",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/archive"
+    }
+  },
+  {
+    "name": "bare",
+    "path": "docs/pages/bare",
+    "sha": "1c8268a0bdc11fd3e136240f6a12b667eff2851c",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/bare?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/bare",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/1c8268a0bdc11fd3e136240f6a12b667eff2851c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/bare?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/1c8268a0bdc11fd3e136240f6a12b667eff2851c",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/bare"
+    }
+  },
+  {
+    "name": "billing",
+    "path": "docs/pages/billing",
+    "sha": "51d56055dfa5847793fc261a71f53eb2f029ec6d",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/billing?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/billing",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/51d56055dfa5847793fc261a71f53eb2f029ec6d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/billing?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/51d56055dfa5847793fc261a71f53eb2f029ec6d",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/billing"
+    }
+  },
+  {
+    "name": "brownfield",
+    "path": "docs/pages/brownfield",
+    "sha": "53c8c27b78017c9022ec4f1c2d0fe77dc0f0c30c",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/brownfield?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/brownfield",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/53c8c27b78017c9022ec4f1c2d0fe77dc0f0c30c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/brownfield?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/53c8c27b78017c9022ec4f1c2d0fe77dc0f0c30c",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/brownfield"
+    }
+  },
+  {
+    "name": "build-reference",
+    "path": "docs/pages/build-reference",
+    "sha": "d9b1dc7ac1ea9acbb62e537f32316123d581b430",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/build-reference",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/d9b1dc7ac1ea9acbb62e537f32316123d581b430",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build-reference?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/d9b1dc7ac1ea9acbb62e537f32316123d581b430",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/build-reference"
+    }
+  },
+  {
+    "name": "build",
+    "path": "docs/pages/build",
+    "sha": "8cf4870f9fd398a27185e70ea737fbc0916af738",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/build?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/build",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/8cf4870f9fd398a27185e70ea737fbc0916af738",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/build?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/8cf4870f9fd398a27185e70ea737fbc0916af738",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/build"
+    }
+  },
+  {
+    "name": "config-plugins",
+    "path": "docs/pages/config-plugins",
+    "sha": "f823170d659af9d7f02c545d281894a80eeeaf52",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/config-plugins?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/config-plugins",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/f823170d659af9d7f02c545d281894a80eeeaf52",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/config-plugins?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/f823170d659af9d7f02c545d281894a80eeeaf52",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/config-plugins"
+    }
+  },
+  {
+    "name": "core-concepts.mdx",
+    "path": "docs/pages/core-concepts.mdx",
+    "sha": "f09b381d0393cb90430cc3653a6b3f3c4493f3f3",
+    "size": 4430,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/core-concepts.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/core-concepts.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/f09b381d0393cb90430cc3653a6b3f3c4493f3f3",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/core-concepts.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/core-concepts.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/f09b381d0393cb90430cc3653a6b3f3c4493f3f3",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/core-concepts.mdx"
+    }
+  },
+  {
+    "name": "custom-builds",
+    "path": "docs/pages/custom-builds",
+    "sha": "79850f00741099173a432033601cd85c89fd7ed8",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/custom-builds?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/custom-builds",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/79850f00741099173a432033601cd85c89fd7ed8",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/custom-builds?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/79850f00741099173a432033601cd85c89fd7ed8",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/custom-builds"
+    }
+  },
+  {
+    "name": "debugging",
+    "path": "docs/pages/debugging",
+    "sha": "7e62068e0a247bb00a48dfba0f2e557a470f4d2d",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/debugging?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/debugging",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/7e62068e0a247bb00a48dfba0f2e557a470f4d2d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/debugging?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/7e62068e0a247bb00a48dfba0f2e557a470f4d2d",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/debugging"
+    }
+  },
+  {
+    "name": "deploy",
+    "path": "docs/pages/deploy",
+    "sha": "4b07c0f1832b7a2394b66e5137bfedbad7560b3d",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/deploy?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/deploy",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/4b07c0f1832b7a2394b66e5137bfedbad7560b3d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/deploy?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/4b07c0f1832b7a2394b66e5137bfedbad7560b3d",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/deploy"
+    }
+  },
+  {
+    "name": "develop",
+    "path": "docs/pages/develop",
+    "sha": "9b2fbbe1446d75916023b67e17c3bac416a8879f",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/develop?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/develop",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/9b2fbbe1446d75916023b67e17c3bac416a8879f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/develop?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/9b2fbbe1446d75916023b67e17c3bac416a8879f",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/develop"
+    }
+  },
+  {
+    "name": "distribution",
+    "path": "docs/pages/distribution",
+    "sha": "4998b42473ee93dedd96724a9a5d9090fa952bcd",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/distribution?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/distribution",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/4998b42473ee93dedd96724a9a5d9090fa952bcd",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/distribution?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/4998b42473ee93dedd96724a9a5d9090fa952bcd",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/distribution"
+    }
+  },
+  {
+    "name": "eas-insights",
+    "path": "docs/pages/eas-insights",
+    "sha": "4966e8b1baef0875e8824873a2782b091d30a19c",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/eas-insights?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/eas-insights",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/4966e8b1baef0875e8824873a2782b091d30a19c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/eas-insights?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/4966e8b1baef0875e8824873a2782b091d30a19c",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/eas-insights"
+    }
+  },
+  {
+    "name": "eas-update",
+    "path": "docs/pages/eas-update",
+    "sha": "19f543e51218da969ac9cc17b5a77f0506dceea8",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/eas-update?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/eas-update",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/19f543e51218da969ac9cc17b5a77f0506dceea8",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/eas-update?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/19f543e51218da969ac9cc17b5a77f0506dceea8",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/eas-update"
+    }
+  },
+  {
+    "name": "eas",
+    "path": "docs/pages/eas",
+    "sha": "055f8d99230d256656c1e181f2a232184517adc6",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/eas?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/eas",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/055f8d99230d256656c1e181f2a232184517adc6",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/eas?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/055f8d99230d256656c1e181f2a232184517adc6",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/eas"
+    }
+  },
+  {
+    "name": "faq.mdx",
+    "path": "docs/pages/faq.mdx",
+    "sha": "ce37ef1f23fa19cdcf483dcc2cf3aacaaa79d052",
+    "size": 14434,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/faq.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/faq.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/ce37ef1f23fa19cdcf483dcc2cf3aacaaa79d052",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/faq.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/faq.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/ce37ef1f23fa19cdcf483dcc2cf3aacaaa79d052",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/faq.mdx"
+    }
+  },
+  {
+    "name": "feature-preview",
+    "path": "docs/pages/feature-preview",
+    "sha": "a5437910b765fa82a420b03a2dd3960010fa040a",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/feature-preview?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/feature-preview",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/a5437910b765fa82a420b03a2dd3960010fa040a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/feature-preview?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/a5437910b765fa82a420b03a2dd3960010fa040a",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/feature-preview"
+    }
+  },
+  {
+    "name": "get-started",
+    "path": "docs/pages/get-started",
+    "sha": "8a8dd0da9620de26cebde3f378e55c32f0c96d6a",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/get-started?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/get-started",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/8a8dd0da9620de26cebde3f378e55c32f0c96d6a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/get-started?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/8a8dd0da9620de26cebde3f378e55c32f0c96d6a",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/get-started"
+    }
+  },
+  {
+    "name": "guides",
+    "path": "docs/pages/guides",
+    "sha": "7c321db929779c12226fb2606bd406a07a283229",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/guides?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/guides",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/7c321db929779c12226fb2606bd406a07a283229",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/guides?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/7c321db929779c12226fb2606bd406a07a283229",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/guides"
+    }
+  },
+  {
+    "name": "index.tsx",
+    "path": "docs/pages/index.tsx",
+    "sha": "0641759f5b260d1b7c27ca0f040bba35a6ea1fd4",
+    "size": 920,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/index.tsx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/index.tsx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/0641759f5b260d1b7c27ca0f040bba35a6ea1fd4",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/index.tsx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/index.tsx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/0641759f5b260d1b7c27ca0f040bba35a6ea1fd4",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/index.tsx"
+    }
+  },
+  {
+    "name": "internal",
+    "path": "docs/pages/internal",
+    "sha": "87c8df71bfa38834b8737a9f9672574c63db9d43",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/internal?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/internal",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/87c8df71bfa38834b8737a9f9672574c63db9d43",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/internal?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/87c8df71bfa38834b8737a9f9672574c63db9d43",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/internal"
+    }
+  },
+  {
+    "name": "ja",
+    "path": "docs/pages/ja",
+    "sha": "5bf9cf0209404838972bbbdf91ceff4c74654ad2",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/ja?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/ja",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/5bf9cf0209404838972bbbdf91ceff4c74654ad2",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/ja?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/5bf9cf0209404838972bbbdf91ceff4c74654ad2",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/ja"
+    }
+  },
+  {
+    "name": "linking",
+    "path": "docs/pages/linking",
+    "sha": "01ac85f119b7eb473eb6ab1c835e6a9d71c5bf60",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/linking?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/linking",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/01ac85f119b7eb473eb6ab1c835e6a9d71c5bf60",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/linking?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/01ac85f119b7eb473eb6ab1c835e6a9d71c5bf60",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/linking"
+    }
+  },
+  {
+    "name": "llms.mdx",
+    "path": "docs/pages/llms.mdx",
+    "sha": "b5f9e4e71dba63cee2faca7165ece759aa5688d7",
+    "size": 2198,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/llms.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/llms.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/b5f9e4e71dba63cee2faca7165ece759aa5688d7",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/llms.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/llms.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/b5f9e4e71dba63cee2faca7165ece759aa5688d7",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/llms.mdx"
+    }
+  },
+  {
+    "name": "mcp.mdx",
+    "path": "docs/pages/mcp.mdx",
+    "sha": "203520b70addd1fe57027045602039bb233bc459",
+    "size": 13181,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/mcp.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/mcp.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/203520b70addd1fe57027045602039bb233bc459",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/mcp.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/mcp.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/203520b70addd1fe57027045602039bb233bc459",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/mcp.mdx"
+    }
+  },
+  {
+    "name": "modules",
+    "path": "docs/pages/modules",
+    "sha": "64f7762c545f6983011c3967d6a3afb58d152164",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/modules?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/modules",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/64f7762c545f6983011c3967d6a3afb58d152164",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/modules?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/64f7762c545f6983011c3967d6a3afb58d152164",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/modules"
+    }
+  },
+  {
+    "name": "monitoring",
+    "path": "docs/pages/monitoring",
+    "sha": "409fa362b0c7348138790a6d4afa4f2b2b0e7ddf",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/monitoring?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/monitoring",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/409fa362b0c7348138790a6d4afa4f2b2b0e7ddf",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/monitoring?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/409fa362b0c7348138790a6d4afa4f2b2b0e7ddf",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/monitoring"
+    }
+  },
+  {
+    "name": "more",
+    "path": "docs/pages/more",
+    "sha": "0f5774d1e8ca0f1af77915bed1a06b6af6edde28",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/more?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/more",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/0f5774d1e8ca0f1af77915bed1a06b6af6edde28",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/more?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/0f5774d1e8ca0f1af77915bed1a06b6af6edde28",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/more"
+    }
+  },
+  {
+    "name": "preview",
+    "path": "docs/pages/preview",
+    "sha": "4380a39c6b8c2b0ad938adadaec1c99fa87c247e",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/preview?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/preview",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/4380a39c6b8c2b0ad938adadaec1c99fa87c247e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/preview?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/4380a39c6b8c2b0ad938adadaec1c99fa87c247e",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/preview"
+    }
+  },
+  {
+    "name": "push-notifications",
+    "path": "docs/pages/push-notifications",
+    "sha": "22f055fed996149a1b66667b712c949f47d74e66",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/push-notifications?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/push-notifications",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/22f055fed996149a1b66667b712c949f47d74e66",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/push-notifications?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/22f055fed996149a1b66667b712c949f47d74e66",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/push-notifications"
+    }
+  },
+  {
+    "name": "regulatory-compliance",
+    "path": "docs/pages/regulatory-compliance",
+    "sha": "97fd9c2fbceff29353bb63cd20f593d7f3f5227c",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/regulatory-compliance?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/regulatory-compliance",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/97fd9c2fbceff29353bb63cd20f593d7f3f5227c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/regulatory-compliance?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/97fd9c2fbceff29353bb63cd20f593d7f3f5227c",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/regulatory-compliance"
+    }
+  },
+  {
+    "name": "review",
+    "path": "docs/pages/review",
+    "sha": "fd15f20c193689c1dca355ca92380457770fab7f",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/review?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/review",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/fd15f20c193689c1dca355ca92380457770fab7f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/review?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/fd15f20c193689c1dca355ca92380457770fab7f",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/review"
+    }
+  },
+  {
+    "name": "router",
+    "path": "docs/pages/router",
+    "sha": "e276cc40a49a599104ff6624adc7ceba21ba0d4d",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/router?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/router",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/e276cc40a49a599104ff6624adc7ceba21ba0d4d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/router?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/e276cc40a49a599104ff6624adc7ceba21ba0d4d",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/router"
+    }
+  },
+  {
+    "name": "skills.mdx",
+    "path": "docs/pages/skills.mdx",
+    "sha": "bd749b011d22498400b87409cbca5e739fc82c37",
+    "size": 5148,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/skills.mdx?ref=main",
+    "html_url": "https://github.com/expo/expo/blob/main/docs/pages/skills.mdx",
+    "git_url": "https://api.github.com/repos/expo/expo/git/blobs/bd749b011d22498400b87409cbca5e739fc82c37",
+    "download_url": "https://raw.githubusercontent.com/expo/expo/main/docs/pages/skills.mdx",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/skills.mdx?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/blobs/bd749b011d22498400b87409cbca5e739fc82c37",
+      "html": "https://github.com/expo/expo/blob/main/docs/pages/skills.mdx"
+    }
+  },
+  {
+    "name": "submit",
+    "path": "docs/pages/submit",
+    "sha": "f39d6a187477e2c96ead3972c6171dcf8b774432",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/submit?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/submit",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/f39d6a187477e2c96ead3972c6171dcf8b774432",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/submit?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/f39d6a187477e2c96ead3972c6171dcf8b774432",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/submit"
+    }
+  },
+  {
+    "name": "technical-specs",
+    "path": "docs/pages/technical-specs",
+    "sha": "a10c0ba78fb756ea2ba2e4f8b6c58c279db39acb",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/technical-specs?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/technical-specs",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/a10c0ba78fb756ea2ba2e4f8b6c58c279db39acb",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/technical-specs?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/a10c0ba78fb756ea2ba2e4f8b6c58c279db39acb",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/technical-specs"
+    }
+  },
+  {
+    "name": "troubleshooting",
+    "path": "docs/pages/troubleshooting",
+    "sha": "e0bda56b5dbbc6a481eec934907ed18a365a9715",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/troubleshooting?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/troubleshooting",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/e0bda56b5dbbc6a481eec934907ed18a365a9715",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/troubleshooting?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/e0bda56b5dbbc6a481eec934907ed18a365a9715",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/troubleshooting"
+    }
+  },
+  {
+    "name": "tutorial",
+    "path": "docs/pages/tutorial",
+    "sha": "f4c45990d3ea1e05db2e26594c35790956db21d7",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/tutorial?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/tutorial",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/f4c45990d3ea1e05db2e26594c35790956db21d7",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/tutorial?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/f4c45990d3ea1e05db2e26594c35790956db21d7",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/tutorial"
+    }
+  },
+  {
+    "name": "versions",
+    "path": "docs/pages/versions",
+    "sha": "94a5a35c3a1b9976d83cf267dd01f547bf0c431c",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/versions?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/versions",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/94a5a35c3a1b9976d83cf267dd01f547bf0c431c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/versions?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/94a5a35c3a1b9976d83cf267dd01f547bf0c431c",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/versions"
+    }
+  },
+  {
+    "name": "workflow",
+    "path": "docs/pages/workflow",
+    "sha": "fce172c9039580f105771b55423739ee4d2ed9a8",
+    "size": 0,
+    "url": "https://api.github.com/repos/expo/expo/contents/docs/pages/workflow?ref=main",
+    "html_url": "https://github.com/expo/expo/tree/main/docs/pages/workflow",
+    "git_url": "https://api.github.com/repos/expo/expo/git/trees/fce172c9039580f105771b55423739ee4d2ed9a8",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/expo/expo/contents/docs/pages/workflow?ref=main",
+      "git": "https://api.github.com/repos/expo/expo/git/trees/fce172c9039580f105771b55423739ee4d2ed9a8",
+      "html": "https://github.com/expo/expo/tree/main/docs/pages/workflow"
+    }
+  }
+]
